@@ -25,6 +25,7 @@ namespace DigitalStore.Models.EF
         public bool IsActive { get; set; }
 
         public virtual NewsCategory NewsCategory { get; set; }
+        public virtual Publisher Publisher { get; set; }
         public virtual Game Game { get; set; }
 
     }

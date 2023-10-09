@@ -13,7 +13,9 @@ namespace DigitalStore.Models.EF
         public Publisher()
         {
             this.Games = new HashSet<Game>();
+            this.GameNewss = new HashSet<GameNews>();
         }
+
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -23,5 +25,6 @@ namespace DigitalStore.Models.EF
         public string Image { get; set; }
 
         public ICollection<Game> Games { get; set; }
+        public ICollection<GameNews> GameNewss { get; set; }
     }
 }

@@ -175,6 +175,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsCategoryController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -184,6 +185,10 @@
     <Compile Include="Migrations\202310091751584_FirstDatabaseAdd.cs" />
     <Compile Include="Migrations\202310091751584_FirstDatabaseAdd.designer.cs">
       <DependentUpon>202310091751584_FirstDatabaseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310091807015_ModifiedGameNews.cs" />
+    <Compile Include="Migrations\202310091807015_ModifiedGameNews.designer.cs">
+      <DependentUpon>202310091807015_ModifiedGameNews.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3117,6 +3122,9 @@
     <Content Include="Areas\Admin\Views\Menu\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Menu\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsCategory\Edit.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -3202,6 +3210,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202310091751584_FirstDatabaseAdd.resx">
       <DependentUpon>202310091751584_FirstDatabaseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310091807015_ModifiedGameNews.resx">
+      <DependentUpon>202310091807015_ModifiedGameNews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
