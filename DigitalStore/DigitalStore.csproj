@@ -176,6 +176,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -3125,6 +3126,9 @@
     <Content Include="Areas\Admin\Views\NewsCategory\Index.cshtml" />
     <Content Include="Areas\Admin\Views\NewsCategory\Add.cshtml" />
     <Content Include="Areas\Admin\Views\NewsCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Publisher\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Publisher\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Publisher\Edit.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
