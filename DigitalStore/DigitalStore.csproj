@@ -173,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\GameGenreController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsCategoryController.cs" />
@@ -3129,6 +3130,9 @@
     <Content Include="Areas\Admin\Views\Publisher\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Publisher\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Publisher\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\GameGenre\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GameGenre\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\GameGenre\Edit.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
