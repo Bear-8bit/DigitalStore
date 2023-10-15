@@ -20,6 +20,7 @@ namespace DigitalStore.Models.EF
         [Required(ErrorMessage = "Tên thể loại Game không được để trống")]
         [StringLength(150, ErrorMessage = "Tên thể loại Game không được vượt quá 150 ký tự")]
         public string Name { get; set; }
+        public string Alias { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
 

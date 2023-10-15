@@ -16,6 +16,7 @@ namespace DigitalStore.Models.EF
         [Required(ErrorMessage = "Tiêu đề không được để trống")]
         [StringLength(250, ErrorMessage = "Tiêu đề không được vượt quá 250 ký tự")]
         public string Title { get; set; }
+        public string Alias { get; set; }
         public string Description { get; set; }
         public string Detail { get; set; }
         public string Image { get; set; }
