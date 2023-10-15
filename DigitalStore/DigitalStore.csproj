@@ -199,6 +199,10 @@
     <Compile Include="Migrations\202310091807015_ModifiedGameNews.designer.cs">
       <DependentUpon>202310091807015_ModifiedGameNews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310151619595_AddAlias.cs" />
+    <Compile Include="Migrations\202310151619595_AddAlias.designer.cs">
+      <DependentUpon>202310151619595_AddAlias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3231,6 +3235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310091807015_ModifiedGameNews.resx">
       <DependentUpon>202310091807015_ModifiedGameNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310151619595_AddAlias.resx">
+      <DependentUpon>202310151619595_AddAlias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
