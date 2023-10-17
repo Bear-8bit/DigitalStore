@@ -181,6 +181,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\GameController.cs" />
     <Compile Include="Areas\Admin\Controllers\GameGenreController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GameImagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsCategoryController.cs" />
@@ -202,6 +203,30 @@
     <Compile Include="Migrations\202310151619595_AddAlias.cs" />
     <Compile Include="Migrations\202310151619595_AddAlias.designer.cs">
       <DependentUpon>202310151619595_AddAlias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310170555395_ModifedGameEF.cs" />
+    <Compile Include="Migrations\202310170555395_ModifedGameEF.designer.cs">
+      <DependentUpon>202310170555395_ModifedGameEF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310170601116_ModifedPriceSale.cs" />
+    <Compile Include="Migrations\202310170601116_ModifedPriceSale.designer.cs">
+      <DependentUpon>202310170601116_ModifedPriceSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310170604579_SolutionPrice.cs" />
+    <Compile Include="Migrations\202310170604579_SolutionPrice.designer.cs">
+      <DependentUpon>202310170604579_SolutionPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310170707459_TestGenre.cs" />
+    <Compile Include="Migrations\202310170707459_TestGenre.designer.cs">
+      <DependentUpon>202310170707459_TestGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310170815230_UpdateGameEF.cs" />
+    <Compile Include="Migrations\202310170815230_UpdateGameEF.designer.cs">
+      <DependentUpon>202310170815230_UpdateGameEF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310170825159_UpdateGameEFPrice.cs" />
+    <Compile Include="Migrations\202310170825159_UpdateGameEFPrice.designer.cs">
+      <DependentUpon>202310170825159_UpdateGameEFPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3147,7 +3172,10 @@
     <Content Include="Areas\Admin\Views\GameGenre\Add.cshtml" />
     <Content Include="Areas\Admin\Views\GameGenre\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Game\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Game\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Game\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\GameImages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutEmpty.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -3240,6 +3268,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310151619595_AddAlias.resx">
       <DependentUpon>202310151619595_AddAlias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310170555395_ModifedGameEF.resx">
+      <DependentUpon>202310170555395_ModifedGameEF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310170601116_ModifedPriceSale.resx">
+      <DependentUpon>202310170601116_ModifedPriceSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310170604579_SolutionPrice.resx">
+      <DependentUpon>202310170604579_SolutionPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310170707459_TestGenre.resx">
+      <DependentUpon>202310170707459_TestGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310170815230_UpdateGameEF.resx">
+      <DependentUpon>202310170815230_UpdateGameEF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310170825159_UpdateGameEFPrice.resx">
+      <DependentUpon>202310170825159_UpdateGameEFPrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

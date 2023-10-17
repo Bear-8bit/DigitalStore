@@ -34,5 +34,70 @@ namespace DigitalStore.Areas.Admin.Controllers
             ViewBag.GameGenre = new SelectList(db.GameGenres.ToList(), "Id", "Name");
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(Game model, List<string> Images, List<int> rDefault)
+        {
+            if (ModelState.IsValid) 
+            {
+                if(Images != null && Images.Count > 0) 
+                {
+                    for(int i = 0; i < Images.Count; i++) 
+                    {
+                        if(i + 1 == rDefault[0])
+                        {
+                            model.Image = Images[i];
+                            model.GameImage.Add(new GameImage {
+                                GameID = model.Id,
+                                Image = Images[i],
+                                IsDefault = true
+                            });
+                        }
+                        else
+                        {
+                            model.GameImage.Add(new GameImage
+                            {
+                                GameID = model.Id,
+                                Image = Images[i],
+                                IsDefault = false
+                            });
+                        }
+                    }
+                }
+                model.CreatedDate = DateTime.Now;
+                model.ModifiedDate = DateTime.Now;
+                db.Games.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.GameGenre = new SelectList(db.GameGenres.ToList(), "Id", "Name");
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            ViewBag.GameGenre = new SelectList(db.GameGenres.ToList(), "Id", "Name");
+            var item = db.Games.Find(id);
+            return View(item);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Edit(Game model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.CreatedDate = DateTime.Now;
+                model.ModifiedDate = DateTime.Now;
+                model.Alias = DigitalStore.Models.Common.Filter.FilterChar(model.Name);
+                db.Games.Attach(model);
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
     }
 }

@@ -8,31 +8,36 @@ using System.Web;
 
 namespace DigitalStore.Models.EF
 {
-    [Table("tn_Game")]
+    [Table("tb_Game")]
     public class Game : CommonAbstract
     {
         public Game()
         {
             this.GameNews = new HashSet<GameNews>();
+            this.GameImage = new HashSet<GameImage>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int GameGenreId { get; set; }
         public string Name { get; set; }
         public string Alias { get; set; }
         public string Description { get; set; }
         public string Detail { get; set; }
         public string Image { get; set; }
         public decimal Price { get; set; }
-        public decimal PriceSale { get; set; }
+        public decimal? PriceSale { get; set; }
         public bool IsHome { get; set; }
         public bool IsSale { get; set; }
         public bool IsFeatured { get; set; }
         public bool IsHot { get; set; }
         public bool IsActive { get; set; }
 
-        public virtual GameGenre GameGenre { get; set; }
+        public virtual GameGenre GameGenres { get; set; }
         public virtual Publisher Publisher { get; set; }
+        public virtual ICollection<GameImage> GameImage { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public ICollection<GameNews> GameNews { get; set; }
 
     }

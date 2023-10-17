@@ -16,5 +16,7 @@ namespace DigitalStore.Models.EF
         public int GameID { get; set; }
         public string Image { get; set; }
         public bool IsDefault { get; set; }
+
+        public virtual Game Game { get; set; }
     }
 }

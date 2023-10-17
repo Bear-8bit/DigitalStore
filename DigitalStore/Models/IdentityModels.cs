@@ -29,6 +29,7 @@ namespace DigitalStore.Models
         }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Game> Games { get; set; }
+        public DbSet<GameImage> GameImages { get; set; }
         public DbSet<GameGenre> GameGenres { get; set; }
         public DbSet<GameNews> GameNews { get; set; }
         public DbSet<NewsCategory> NewsCategories { get; set; }

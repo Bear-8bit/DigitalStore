@@ -1,10 +1,12 @@
 ﻿using DigitalStore.Models;
 using DigitalStore.Models.EF;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace DigitalStore.Areas.Admin.Controllers
 {
@@ -12,10 +14,23 @@ namespace DigitalStore.Areas.Admin.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Admin/GameGenre
-        public ActionResult Index()
+        public ActionResult Index(string SearchText, int? page)
         {
-            var item = db.GameGenres;
-            return View(item);
+            var pageSize = 5;
+            if (page == null)
+            {
+                page = 1;
+            }
+            IEnumerable<GameGenre> items = db.GameGenres.OrderByDescending(x => x.Id);
+            if (!string.IsNullOrEmpty(SearchText))
+            {
+                items = items.Where(x => x.Alias.Contains(SearchText) || x.Name.Contains(SearchText)).ToList();
+            }
+            var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            items = items.ToPagedList(pageIndex, pageSize);
+            ViewBag.PageSize = pageSize;
+            ViewBag.Page = page;
+            return View(items);
         }
 
         public ActionResult Add()
@@ -35,7 +50,7 @@ namespace DigitalStore.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(model);
+            return View();
         }
 
         public ActionResult Edit(int id)

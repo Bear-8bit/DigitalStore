@@ -111,7 +111,7 @@
                     $.ajax({
                         url: '/Admin/GameGenre/Delete',
                         type: 'POST',
-                        data: { id: id },
+                        data: { gameId: id },
                         success: function (rs) {
                             if (rs.success) {
                                 $('#trow_' + id).remove();
