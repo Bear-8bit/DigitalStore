@@ -31,7 +31,7 @@ namespace DigitalStore.Models.EF
         public bool IsHome { get; set; }
         public bool IsSale { get; set; }
         public bool IsFeatured { get; set; }
-        public bool IsHot { get; set; }
+        public bool IsNew { get; set; }
         public bool IsActive { get; set; }
 
         public virtual GameGenre GameGenres { get; set; }

@@ -20,7 +20,7 @@
         </li>
     </ul>
 }
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"/>
+<link rel="stylesheet" href="/code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"/>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -79,6 +79,10 @@
                         <th>Giá</th>
                         <th>Ngày tạo</th>
                         <th>Trạng thái</th>
+                        <th>Home</th>
+                        <th>Featured</th>
+                        <th>Sale</th>
+                        <th>New</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -91,6 +95,10 @@
                         {
 
                             var strCheck = item.IsActive ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strCheckHome = item.IsHome ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strCheckSale = item.IsSale ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strCheckFeatured = item.IsFeatured ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strCheckNew = item.IsNew ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
                             <tr id="trow_@item.Id">
                                 <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
                                 <td>@i</td>
@@ -100,9 +108,31 @@
                                 <td>@item.Price</td>
                                 <td>@item.CreatedDate</td>
                                 <td class="text-center">
-                                    <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck) </a>
+                                    <a href='#' data-id="@item.Id" class="btnActive">
+                                        @Html.Raw(strCheck)
+                                    </a>
                                 </td>
-                                <td>
+                                <td class="text-center">
+                                    <a href='#' data-id="@item.Id" class="btnHome">
+                                        @Html.Raw(strCheckHome)
+                                    </a>
+                                </td>
+                                <td class="text-center"> 
+                                    <a href='#' data-id="@item.Id" class="btnFeatured">
+                                        @Html.Raw(strCheckFeatured)
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href='#' data-id="@item.Id" class="btnSale">
+                                        @Html.Raw(strCheckSale)
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href='#' data-id="@item.Id" class="btnNew">
+                                        @Html.Raw(strCheckNew)
+                                    </a>
+                                </td>
+                                <td class="text-center">
                                     <a href="/Admin/Game/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
                                     <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
                                 </td>
@@ -252,16 +282,116 @@
                     success: function (rs) {
                         if (rs.success) {
                             if (rs.IsActive) {
-                                btn.html("<i class='fa fa-check text-success'></i>")
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                                location.reload();
                             }
                             else {
                                 btn.html("<i class='fas fa-times text-danger'></i>");
+                                location.reload();
                             }
                         }
                     }
                 });
             });
+
+            $('body').on('click', '.btnNew', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data("id");
+                $.ajax({
+                    url: '/Admin/Game/IsNew',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.IsActive) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                                location.reload();
+                            }
+                            else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                                location.reload();
+                            }
+                        }
+                    }
+                });
+            });
+           
+            $('body').on('click', '.btnHome', function (e) {
+                e.preventDefault();
+                var btn = $(this)
+                var id = btn.data("id");
+                $.ajax({
+                    url: "/Admin/Game/IsHome",
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        debugger;
+                        if (rs.success) {
+                            if (rs.IsActive) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                                location.reload();
+                            }
+                            else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                                location.reload();
+                            }
+                        }
+
+                    }
+                });
+            });
+
+            $('body').on('click', '.btnSale', function (e) {
+                e.preventDefault();
+                var btn = $(this)
+                var id = btn.data("id");
+                $.ajax({
+                    url: "/Admin/Game/IsSale",
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        debugger;
+                        if (rs.success) {
+                            if (rs.IsSale) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                                location.reload();
+                            }
+                            else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                                location.reload();
+                            }
+                        }
+
+                    }
+                });
+            });
+            $('body').on('click', '.btnFeatured', function (e) {
+                e.preventDefault();
+                var btn = $(this)
+                var id = btn.data("id");
+                $.ajax({
+                    url: "/Admin/Game/IsFeatured",
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        debugger;
+                        if (rs.success) {
+                            if (rs.IsSale) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                                location.reload();
+                            }
+                            else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                                location.reload();
+                            }
+                        }
+
+                    }
+                });
+            });
         });
+
     </script>
 }
 

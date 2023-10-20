@@ -186,9 +186,12 @@
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
+    <Compile Include="Common\Common.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -227,6 +230,14 @@
     <Compile Include="Migrations\202310170825159_UpdateGameEFPrice.cs" />
     <Compile Include="Migrations\202310170825159_UpdateGameEFPrice.designer.cs">
       <DependentUpon>202310170825159_UpdateGameEFPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310171917502_MenuAlias.cs" />
+    <Compile Include="Migrations\202310171917502_MenuAlias.designer.cs">
+      <DependentUpon>202310171917502_MenuAlias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310180051026_UpdateGameEF1.cs" />
+    <Compile Include="Migrations\202310180051026_UpdateGameEF1.designer.cs">
+      <DependentUpon>202310180051026_UpdateGameEF1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3310,6 +3321,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Menu\_MenuTop.cshtml" />
+    <Content Include="Views\Menu\_MenuGameGenre.cshtml" />
+    <Content Include="Views\Menu\_MenuArrivals.cshtml" />
+    <Content Include="Views\Game\Partail_ItemsByGenreID.cshtml" />
+    <Content Include="Views\Game\Partical_GameSale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3370,6 +3386,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310170825159_UpdateGameEFPrice.resx">
       <DependentUpon>202310170825159_UpdateGameEFPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310171917502_MenuAlias.resx">
+      <DependentUpon>202310171917502_MenuAlias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310180051026_UpdateGameEF1.resx">
+      <DependentUpon>202310180051026_UpdateGameEF1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

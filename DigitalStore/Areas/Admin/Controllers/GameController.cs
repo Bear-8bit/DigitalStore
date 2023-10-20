@@ -99,5 +99,74 @@ namespace DigitalStore.Areas.Admin.Controllers
             }
             return View(model);
         }
+
+
+        [HttpPost]
+        public ActionResult IsHome(int id)
+        {
+            var item = db.Games.Find(id);
+            if (item != null)
+            {
+                item.IsHome = !item.IsHome;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, IsHome = item.IsHome });
+            }
+            return Json(new { success = false });
+        }
+
+        [HttpPost]
+        public ActionResult IsNew(int id)
+        {
+            var item = db.Games.Find(id);
+            if (item != null)
+            {
+                item.IsNew = !item.IsNew;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, IsNew = item.IsNew });
+            }
+            return Json(new { success = false });
+        }
+
+        [HttpPost]
+        public ActionResult IsFeatured(int id)
+        {
+            var item = db.Games.Find(id);
+            if (item != null)
+            {
+                item.IsFeatured = !item.IsFeatured;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, IsFeatured = item.IsFeatured });
+            }
+            return Json(new { success = false });
+        }
+        [HttpPost]
+        public ActionResult IsActive(int id)
+        {
+            var item = db.Games.Find(id);
+            if (item != null)
+            {
+                item.IsActive = !item.IsActive;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, IsActive = item.IsActive });
+            }
+            return Json(new { success = false });
+        }
+        [HttpPost]
+        public ActionResult IsSale(int id)
+        {
+            var item = db.Games.Find(id);
+            if (item != null)
+            {
+                item.IsSale = !item.IsSale;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, IsSale = item.IsSale });
+            }
+            return Json(new { success = false });
+        }
     }
 }

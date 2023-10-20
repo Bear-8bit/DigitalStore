@@ -32,6 +32,7 @@ namespace DigitalStore.Areas.Admin.Controllers
             {
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;
+                model.Alias = DigitalStore.Models.Common.Filter.FilterChar(model.Name);
                 db.Menus.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -52,6 +53,7 @@ namespace DigitalStore.Areas.Admin.Controllers
             {
                 db.Menus.Attach(model);
                 model.ModifiedDate = DateTime.Now;
+                model.Alias = DigitalStore.Models.Common.Filter.FilterChar(model.Name);
                 db.Entry(model).Property(x => x.Name).IsModified = true;
                 db.Entry(model).Property(x => x.Description).IsModified = true;
                 db.Entry(model).Property(x => x.ModifiedDate).IsModified = true;

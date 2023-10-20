@@ -16,7 +16,7 @@ namespace DigitalStore.Areas.Admin.Controllers
         // GET: Admin/GameGenre
         public ActionResult Index(string SearchText, int? page)
         {
-            var pageSize = 5;
+            var pageSize = 10;
             if (page == null)
             {
                 page = 1;
@@ -46,6 +46,7 @@ namespace DigitalStore.Areas.Admin.Controllers
             {
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;
+                model.Alias = DigitalStore.Models.Common.Filter.FilterChar(model.Name);
                 db.GameGenres.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -66,6 +67,7 @@ namespace DigitalStore.Areas.Admin.Controllers
             {
                 db.GameGenres.Attach(model);
                 model.ModifiedDate = DateTime.Now;
+                model.Alias = DigitalStore.Models.Common.Filter.FilterChar(model.Name);
                 db.Entry(model).Property(x => x.Name).IsModified = true;
                 db.Entry(model).Property(x => x.Description).IsModified = true;
                 db.Entry(model).Property(x => x.ModifiedDate).IsModified = true;
