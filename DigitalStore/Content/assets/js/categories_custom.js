@@ -1,4 +1,4 @@
-/* JS Document */
+﻿/* JS Document */
 
 /******************************
 
@@ -320,12 +320,12 @@ jQuery(document).ready(function($)
     		$('.product-grid').isotope({
     			itemSelector: '.product-item',
 	            getSortData: {
-	            	price: function(itemElement)
-	            	{
-	            		var priceEle = $(itemElement).find('.product_price').text().replace( '$', '' );
-	            		return parseFloat(priceEle);
-	            	},
-	            	name: '.product_name'
+					price: function (itemElement)
+					{
+						var priceEle = $(itemElement).find('.in_product_price').text().replace('đ', '');
+						return parseFloat(priceEle);
+					},
+					name: '.product_name'
 	            },
 	            animationOptions: {
 	                duration: 750,
@@ -362,20 +362,20 @@ jQuery(document).ready(function($)
 	        filterButton.on('click', function()
 	        {
 	        	$('.product-grid').isotope({
-		            filter: function()
-		            {
-		            	var priceRange = $('#amount').val();
-			        	var priceMin = parseFloat(priceRange.split('-')[0].replace('$', ''));
-			        	var priceMax = parseFloat(priceRange.split('-')[1].replace('$', ''));
-			        	var itemPrice = $(this).find('.product_price').clone().children().remove().end().text().replace( '$', '' );
+					filter: function ()
+					{
+						var priceRange = $('#amount').val();
+						var priceMin = parseFloat(priceRange.split('-')[0].replace('đ', ''));
+						var priceMax = parseFloat(priceRange.split('-')[1].replace('đ', ''));
+						var itemPrice = $(this).find('.in_product_price').clone().children().remove().end().text().replace('đ', '');
 
-			        	return (itemPrice > priceMin) && (itemPrice < priceMax);
-		            },
-		            animationOptions: {
-		                duration: 750,
-		                easing: 'linear',
-		                queue: false
-		            }
+						return (itemPrice > priceMin) && (itemPrice < priceMax);
+					},
+					animationOptions: {
+						duration: 750,
+						easing: 'linear',
+						queue: false
+					}
 		        });
 	        });
     	}
@@ -389,19 +389,20 @@ jQuery(document).ready(function($)
 
     function initPriceSlider()
     {
-		$( "#slider-range" ).slider(
-		{
-			range: true,
-			min: 0,
-			max: 1000,
-			values: [ 0, 580 ],
-			slide: function( event, ui )
+		$("#slider-range").slider(
 			{
-				$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-			}
-		});
-			
-		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+				range: true,
+				min: 0,
+				max: 500000,
+				values: [0, 500000],
+				slide: function (event, ui) {
+					$("#amount").val(ui.values[0] + "VNĐ" + " - " + ui.values[1] + "VNĐ");
+					$('#FromAmount').val(ui.values[0]);
+					$('#ToAmount').val(ui.values[1]);
+				}
+			});
+
+		$("#amount").val($("#slider-range").slider("values", 0) + "VNĐ - " + $("#slider-range").slider("values", 1) + "VNĐ");
     }
 
     /* 

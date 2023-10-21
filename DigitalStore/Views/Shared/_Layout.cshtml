@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/slider.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/responsive.css">
@@ -37,7 +38,7 @@
                                 <a href="#">colo<span>shop</span></a>
                             </div>
                             <nav class="navbar">
-                               @Html.Action("MenuTop", "Menu")
+                                @Html.Action("MenuTop", "Menu")
                                 <ul class="navbar_user">
                                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                                     <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
@@ -84,8 +85,8 @@
             </div>
         </div>
         @RenderBody()
-      
-       
+
+
 
         <!-- Blogs -->
 
@@ -331,14 +332,15 @@
     </div>
 
 
-    @Scripts.Render("~/bundles/jquery")
     <script src="~/Content/assets/js/jquery-3.2.1.min.js"></script>
     <script src="~/Content/assets/styles/bootstrap4/popper.js"></script>
     <script src="~/Content/assets/styles/bootstrap4/bootstrap.min.js"></script>
     <script src="~/Content/assets/plugins/Isotope/isotope.pkgd.min.js"></script>
     <script src="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script src="~/Content/assets/plugins/easing/easing.js"></script>
+    <script src="~/Content/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="~/Content/assets/js/sliderscript.js"></script>
     <script src="~/Content/assets/js/custom.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

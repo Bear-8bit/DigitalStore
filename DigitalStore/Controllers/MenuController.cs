@@ -20,6 +20,15 @@ namespace DigitalStore.Controllers
             var item = db.Menus.OrderBy(x => x.Id).ToList();
             return PartialView("_MenuTop", item);
         }
+        public ActionResult MenuLeft(int? id)
+        {
+            if (id != null)
+            {
+                ViewBag.Genre_ID = id;
+            }
+            var items = db.GameGenres.ToList();
+            return PartialView("_MenuLeft", items);
+        }
         public ActionResult MenuGameGenre()
         {
             var items = db.GameGenres.ToList();

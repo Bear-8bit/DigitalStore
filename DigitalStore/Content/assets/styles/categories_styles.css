@@ -889,6 +889,7 @@ section
 
 .products_iso
 {
+
 	width: 100%;
 }
 .section_title
@@ -1338,6 +1339,9 @@ section
 	border-radius: 3px;
 	overflow: hidden;
 }
+.inline-block {
+	display: inline-block;
+}
 .product-item::after
 {
 	display: block;
@@ -1367,6 +1371,7 @@ section
 	width: 100%;
 	height: 230px;
 }
+
 .product_image
 {
 	width: 102%;

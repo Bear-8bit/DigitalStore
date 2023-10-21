@@ -188,7 +188,8 @@
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -3324,8 +3325,12 @@
     <Content Include="Views\Menu\_MenuTop.cshtml" />
     <Content Include="Views\Menu\_MenuGameGenre.cshtml" />
     <Content Include="Views\Menu\_MenuArrivals.cshtml" />
-    <Content Include="Views\Game\Partail_ItemsByGenreID.cshtml" />
-    <Content Include="Views\Game\Partical_GameSale.cshtml" />
+    <Content Include="Views\Games\Partail_ItemsByGenreID.cshtml" />
+    <Content Include="Views\Games\Partical_GameSale.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\Menu\_MenuLeft.cshtml" />
+    <Content Include="Views\Games\GameGenre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
