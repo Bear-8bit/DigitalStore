@@ -21,6 +21,11 @@ namespace DigitalStore.Controllers
             }
             return View(items);
         }
+        public ActionResult Detail(string alias, int id)
+        {
+            var item = db.Games.Find(id);
+            return View(item);
+        }
         public ActionResult GameGenre(string alias, int? id)
         {
             var items = db.Games.ToList();
@@ -44,7 +49,19 @@ namespace DigitalStore.Controllers
 
         public ActionResult Partical_GameSale()
         {
+            var items = db.Games.Where(x => x.IsHome && x.IsActive && x.IsFeatured).Take(12).ToList();
+            return PartialView(items);
+        }
+
+        public ActionResult Partical_TopSeller()
+        {
             var items = db.Games.Where(x => x.IsHome && x.IsActive && x.IsSale).Take(12).ToList();
+            return PartialView(items);
+        }
+
+        public ActionResult Partical_NewRelease() 
+        {
+            var items = db.Games.Where(x => x.IsHome && x.IsActive && x.IsNew).Take(12).ToList();
             return PartialView(items);
         }
     }

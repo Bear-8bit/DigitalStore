@@ -3328,9 +3328,12 @@
     <Content Include="Views\Games\Partail_ItemsByGenreID.cshtml" />
     <Content Include="Views\Games\Partical_GameSale.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Games\Index.cshtml" />
     <Content Include="Views\Menu\_MenuLeft.cshtml" />
+    <Content Include="Views\Games\Detail.cshtml" />
+    <Content Include="Views\Games\Partical_TopSeller.cshtml" />
+    <Content Include="Views\Games\Partical_NewRelease.cshtml" />
     <Content Include="Views\Games\GameGenre.cshtml" />
+    <Content Include="Views\Games\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

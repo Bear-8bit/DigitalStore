@@ -30,12 +30,7 @@ namespace DigitalStore
                 defaults: new { controller = "Games", action = "GameGenre", id = UrlParameter.Optional },
                 namespaces: new[] { "WebsiteBanDTOnline.Controllers" }
             );
-            routes.MapRoute(
-               name: "Home",
-               url: "trang-chu",
-               defaults: new { controller = "Home", action = "Index", alias = UrlParameter.Optional },
-               namespaces: new[] { "DigitalStore.Controllers" }
-           );
+           
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
