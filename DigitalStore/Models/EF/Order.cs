@@ -22,6 +22,7 @@ namespace DigitalStore.Models.EF
         public string Email { get; set; }
         public DateTime Order_Date { get; set; }
         public decimal TotalAmount { get; set; }
+        public int TypePayment {  get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

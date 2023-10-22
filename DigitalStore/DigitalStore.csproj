@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,10 +241,15 @@
     <Compile Include="Migrations\202310180051026_UpdateGameEF1.designer.cs">
       <DependentUpon>202310180051026_UpdateGameEF1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310220450068_UpdatePayment.cs" />
+    <Compile Include="Migrations\202310220450068_UpdatePayment.designer.cs">
+      <DependentUpon>202310220450068_UpdatePayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
     <Compile Include="Models\Common\Filter.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\EF\Game.cs" />
     <Compile Include="Models\EF\GameGenre.cs" />
     <Compile Include="Models\EF\GameImage.cs" />
@@ -255,6 +261,8 @@
     <Compile Include="Models\EF\Publisher.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -3277,6 +3285,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jsShopping.js" />
     <Content Include="Scripts\plugin_autoNumeric-1.9.45.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3334,6 +3343,11 @@
     <Content Include="Views\Games\Partical_NewRelease.cshtml" />
     <Content Include="Views\Games\GameGenre.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Partical_Item_Cart.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOut.cshtml" />
+    <Content Include="Views\ShoppingCart\Partical_Item_ThanhToan.cshtml" />
+    <Content Include="Views\ShoppingCart\Partial_CheckOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3400,6 +3414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310180051026_UpdateGameEF1.resx">
       <DependentUpon>202310180051026_UpdateGameEF1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310220450068_UpdatePayment.resx">
+      <DependentUpon>202310220450068_UpdatePayment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -13,9 +13,27 @@ namespace DigitalStore
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
+             name: "CheckOut",
+             url: "thanh-toan",
+             defaults: new { controller = "ShoppingCart", action = "CheckOut", alias = UrlParameter.Optional },
+             namespaces: new[] { "DigitalStore.Controllers" }
+           );
+            routes.MapRoute(
+              name: "ShoppingCart",
+              url: "gio-hang",
+              defaults: new { controller = "ShoppingCart", action = "Index", alias = UrlParameter.Optional },
+              namespaces: new[] { "DigitalStore.Controllers" }
+            );
+            routes.MapRoute(
                name: "Contact",
                url: "lien-he",
                defaults: new { controller = "Contact", action = "Index", alias = UrlParameter.Optional },
+               namespaces: new[] { "DigitalStore.Controllers" }
+           );
+            routes.MapRoute(
+               name: "GameDetail",
+               url: "chi-tiet/{alias}-{id}",
+               defaults: new { controller = "Games", action = "Detail", alias = UrlParameter.Optional },
                namespaces: new[] { "DigitalStore.Controllers" }
            );
             routes.MapRoute(
