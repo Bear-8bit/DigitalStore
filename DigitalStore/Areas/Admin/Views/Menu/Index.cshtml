@@ -19,107 +19,108 @@
         </li>
     </ul>
 }
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Quản lý danh mục</h1>
+@section body{
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý danh mục</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Danh mục</li>
+                    </ol>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Danh mục</li>
-                </ol>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Danh sách danh mục</h3>
+
+                <div class="card-tools">
+                    <a href="/Admin/Menu/Add" class="btn btn-primary">Thêm mới</a>
+                </div>
             </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</section>
-
-<!-- Main content -->
-<section class="content">
-
-    <!-- Default box -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Danh sách danh mục</h3>
-
-            <div class="card-tools">
-                <a href="/Admin/Menu/Add" class="btn btn-primary">Thêm mới</a>
-            </div>
-        </div>
 
 
-        <div class="card-body">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>Tên danh mục</th>
-                        <th>Mô tả</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    @if (Model != null && Model.Any())
-                    {
-                        var i = 1;
-                        foreach (var item in Model)
-                        {
-                            <tr id="trow_@item.Id">
-                                <td>@i</td>
-                                <td>@item.Name</td>
-                                <td>@item.Description</td>
-                                <td>
-                                    <a href="/Admin/Menu/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
-                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
-                                </td>
-                            </tr>
-                            i++;
-                        }
-
-                    }
-                    else
-                    {
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
                         <tr>
-                            <td colspan="4">Không có bản ghi nào</td>
+                            <th>STT</th>
+                            <th>Tên danh mục</th>
+                            <th>Mô tả</th>
+                            <th></th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
+                    </thead>
+                    <tbody>
 
-        </div>
-        <!-- /.card-footer-->
-    </div>
-    <!-- /.card -->
-
-</section>
-<!-- /.content -->
-
-@section scripts
-{
-    <script>
-        $(document).ready(function () {
-            $('body').on('click', '.btnDelete', function () {
-                var id = $(this).data("id");
-                var conf = confirm("Bạn có muốn xóa danh mục này không ?");
-                if (conf == true) {
-                    $.ajax({
-                        url: '/Admin/Menu/Delete',
-                        type: 'POST',
-                        data: { id: id },
-                        success: function (rs) {
-                            if (rs.success) {
-                                $('#trow_' + id).remove();
+                        @if (Model != null && Model.Any())
+                        {
+                            var i = 1;
+                            foreach (var item in Model)
+                            {
+                                <tr id="trow_@item.Id">
+                                    <td>@i</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Description</td>
+                                    <td>
+                                        <a href="/Admin/Menu/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                        <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                    </td>
+                                </tr>
+                                i++;
                             }
+
                         }
-                    });
-                }
-            });
-        });
-    </script>
+                        else
+                        {
+                            <tr>
+                                <td colspan="4">Không có bản ghi nào</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
 }
+    @section scripts
+{
+        <script>
+            $(document).ready(function () {
+                $('body').on('click', '.btnDelete', function () {
+                    var id = $(this).data("id");
+                    var conf = confirm("Bạn có muốn xóa danh mục này không ?");
+                    if (conf == true) {
+                        $.ajax({
+                            url: '/Admin/Menu/Delete',
+                            type: 'POST',
+                            data: { id: id },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    $('#trow_' + id).remove();
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+    }

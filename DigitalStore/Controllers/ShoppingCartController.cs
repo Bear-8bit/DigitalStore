@@ -111,7 +111,7 @@ namespace DigitalStore.Controllers
                     contentAdmin = contentAdmin.Replace("{{Email}}", order.Email);
                     contentAdmin = contentAdmin.Replace("{{ThanhTien}}", DigitalStore.Common.Common.FormatNumber(ThanhTien, 0));
                     contentAdmin = contentAdmin.Replace("{{TongTien}}", DigitalStore.Common.Common.FormatNumber(TongTien, 0));
-                    DigitalStore.Common.Common.SendMail("DigitalStore", "Hóa đơn #" + order.Order_Code, contentCustomer.ToString(), contentAdmin.AppSettings["EmailAdmin"]);
+                    DigitalStore.Common.Common.SendMail("DigitalStore", "Hóa đơn #" + order.Order_Code, contentCustomer.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);
                     cart.ClearCart();
                     return RedirectToAction("CheckOutSuccess");
                 }

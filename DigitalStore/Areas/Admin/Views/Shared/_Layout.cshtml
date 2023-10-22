@@ -29,6 +29,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Content/Clients/dist/css/adminlte.min.css">
 </head>
+@RenderBody()
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
@@ -170,7 +171,7 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @RenderBody()
+            @RenderSection("body", required: false)
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
@@ -217,7 +218,7 @@
     @*<script src="~/Content/Clients/dist/js/demo.js"></script>*@
     <!-- Page specific script -->
     <script>
-    $(function () {
+        $(function () {
             //Initialize Select2 Elements
             $('.select2').select2()
 
@@ -348,10 +349,9 @@
         document.querySelector("#actions .cancel").onclick = function () {
             myDropzone.removeAllFiles(true)
         }
-                          // DropzoneJS Demo Code End</script>
-
+                                  // DropzoneJS Demo Code End</script>
+    @RenderSection("scripts", required: false)
     <script src="~/Content/ckeditor/ckeditor/ckeditor.js"></script>
     <script src="~/Content/ckfinder/ckfinder/ckfinder.js"></script>
-    @RenderSection("scripts", required: false)
 </body>
 </html>
