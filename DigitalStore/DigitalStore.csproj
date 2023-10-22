@@ -3124,6 +3124,8 @@
     <Content Include="Content\Clients\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="Content\Clients\plugins\uplot\uPlot.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\templates\send1.html" />
+    <Content Include="Content\templates\send2.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

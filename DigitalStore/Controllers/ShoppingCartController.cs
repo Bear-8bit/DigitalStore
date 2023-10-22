@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Data;
 using System.Reflection;
 using System.Security.Principal;
+using System.Configuration;
 
 namespace DigitalStore.Controllers
 {
@@ -79,6 +80,38 @@ namespace DigitalStore.Controllers
                     order.Order_Code = "DH" + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
                     db.Orders.Add(order);
                     db.SaveChanges();
+
+                    var strSanPham = "";
+                    var ThanhTien = decimal.Zero;
+                    var TongTien = decimal.Zero;
+                    foreach(var sp in cart.Items)
+                    {
+                        strSanPham += "<tr>";
+                        strSanPham += "<td>"+ sp.ProductName +"</td>";
+                        strSanPham += "<td>" + DigitalStore.Common.Common.FormatNumber(sp.TotalPrice, 0) + "</td>";
+                        strSanPham += "</tr>";
+                        ThanhTien += sp.Price;
+                    }
+                    TongTien = ThanhTien;
+                    string contentCustomer = System.IO.File.ReadAllText(Server.MapPath("~/Content/templates/send2.html"));
+                    contentCustomer = contentCustomer.Replace("{{MaDon}}", order.Order_Code);
+                    contentCustomer = contentCustomer.Replace("{{SanPham}}", strSanPham);
+                    contentCustomer = contentCustomer.Replace("{{NgayDat}}", DateTime.Now.ToString("dd/MM/yyyy"));
+                    contentCustomer = contentCustomer.Replace("{{UserName}}", order.UserName);
+                    contentCustomer = contentCustomer.Replace("{{Email}}", order.Email);
+                    contentCustomer = contentCustomer.Replace("{{ThanhTien}}", DigitalStore.Common.Common.FormatNumber(ThanhTien, 0));
+                    contentCustomer = contentCustomer.Replace("{{TongTien}}", DigitalStore.Common.Common.FormatNumber(TongTien, 0));
+                    DigitalStore.Common.Common.SendMail("DigitalStore", "Hóa đơn #" + order.Order_Code, contentCustomer.ToString(), req.Email);
+
+                    string contentAdmin = System.IO.File.ReadAllText(Server.MapPath("~/Content/templates/send1.html"));
+                    contentAdmin = contentAdmin.Replace("{{MaDon}}", order.Order_Code);
+                    contentAdmin = contentAdmin.Replace("{{SanPham}}", strSanPham);
+                    contentAdmin = contentAdmin.Replace("{{NgayDat}}", DateTime.Now.ToString("dd/MM/yyyy"));
+                    contentAdmin = contentAdmin.Replace("{{UserName}}", order.UserName);
+                    contentAdmin = contentAdmin.Replace("{{Email}}", order.Email);
+                    contentAdmin = contentAdmin.Replace("{{ThanhTien}}", DigitalStore.Common.Common.FormatNumber(ThanhTien, 0));
+                    contentAdmin = contentAdmin.Replace("{{TongTien}}", DigitalStore.Common.Common.FormatNumber(TongTien, 0));
+                    DigitalStore.Common.Common.SendMail("DigitalStore", "Hóa đơn #" + order.Order_Code, contentCustomer.ToString(), contentAdmin.AppSettings["EmailAdmin"]);
                     cart.ClearCart();
                     return RedirectToAction("CheckOutSuccess");
                 }
