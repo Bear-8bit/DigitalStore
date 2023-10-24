@@ -37,7 +37,7 @@ namespace DigitalStore.Controllers
 
         public ActionResult MenuArrivals()
         {
-            var items = db.GameGenres.ToList();
+            var items = db.GameGenres.Take(5).ToList();
             return PartialView("_MenuArrivals", items);
         }
     }

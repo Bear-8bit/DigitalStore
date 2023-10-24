@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/bootstrap4/bootstrap.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
@@ -35,7 +37,7 @@
                     <div class="row">
                         <div class="col-lg-12 text-right">
                             <div class="logo_container">
-                                <a href="#">colo<span>shop</span></a>
+                                <a href="#" style="color: #F1F6F9;">Pinwheel<span style="color: #64CCC5;"> Galaxy</span></a>
                             </div>
                             <nav class="navbar">
                                 @Html.Action("MenuTop", "Menu")
@@ -44,7 +46,10 @@
                                 {
                                     <div class="pl-4">
                                         <div class="dropdown">
-                                            <a class="btn btn-md" style="color: #F1F6F9;" type="button" href="/Account/Login">Đăng nhập</a>
+                                            <button class="btn btn-sm border-1" style="color: #F1F6F9;">
+                                                <a class="btn" style="color: #212A3E;" type="button" href="/Account/Login">Đăng nhập</a>
+                                            </button>
+                                           
                                         </div>
                                     </div>
                                 }
@@ -57,15 +62,15 @@
                                         </li>
                                         <li class="checkout">
                                             <a href="/gio-hang">
-                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                <i class='bx bx-shopping-bag' style="font-size: 20px;"></i>
                                                 <span id="checkout_items" class="checkout_items">0</span>
                                             </a>
                                         </li>
                                     </ul>
                                     <div class="pl-4">
                                         <div class="dropdown">
-                                            <button class="btn dropdown-toggle" style="color:#212A3E;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <i class="fa fa-user" href="#"></i>
+                                            <button class="btn btn-primary-outline dropdown-toggle" style="color: #F1F6F9; font-size: 20px; background-color: transparent;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <i class='bx bxs-user' style="color: #F1F6F9;"></i>
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item" href="#">@User.Identity.Name</a>

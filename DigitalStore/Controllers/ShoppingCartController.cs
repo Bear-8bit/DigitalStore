@@ -74,8 +74,7 @@ namespace DigitalStore.Controllers
                     order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
                     order.TypePayment = req.TypePayment;
                     order.CreatedDate = DateTime.Now;
-                    order.ModifiedDate = DateTime.Now;
-                    order.CreatedBy = req.Phone;
+                    //order.ModifiedDate = DateTime.Now;
                     Random rd = new Random();
                     order.Order_Code = "DH" + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
                     db.Orders.Add(order);
@@ -113,7 +112,7 @@ namespace DigitalStore.Controllers
                     contentAdmin = contentAdmin.Replace("{{TongTien}}", DigitalStore.Common.Common.FormatNumber(TongTien, 0));
                     DigitalStore.Common.Common.SendMail("DigitalStore", "Hóa đơn #" + order.Order_Code, contentCustomer.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);
                     cart.ClearCart();
-                    return RedirectToAction("CheckOutSuccess");
+                    return RedirectToAction("CheckOutSuccess", "ShoppingCart");
                 }
             }
             return Json(code);
