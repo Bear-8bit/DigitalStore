@@ -186,6 +186,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
@@ -3437,6 +3438,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\News\" />
     <Folder Include="Content\ckfinder\ckfinder\userfiles\" />
   </ItemGroup>
   <ItemGroup>
