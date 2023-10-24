@@ -8,7 +8,7 @@ using DigitalStore.Models.EF;
 
 namespace DigitalStore.Areas.Admin.Controllers
 {
-    
+    [Authorize(Roles = "Admin")]
     public class MenuController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
