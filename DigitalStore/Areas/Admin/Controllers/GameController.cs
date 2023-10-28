@@ -37,6 +37,7 @@ namespace DigitalStore.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Add(Game model, List<string> Images, List<int> rDefault)
         {
             if (ModelState.IsValid) 
@@ -73,6 +74,19 @@ namespace DigitalStore.Areas.Admin.Controllers
             }
             ViewBag.GameGenre = new SelectList(db.GameGenres.ToList(), "Id", "Name");
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var item = db.Games.Find(id);
+            if (item != null)
+            {
+                db.Games.Remove(item);
+                db.SaveChanges();
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
         }
 
         public ActionResult Edit(int id)
