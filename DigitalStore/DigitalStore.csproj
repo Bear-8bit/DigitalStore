@@ -261,6 +261,10 @@
     <Compile Include="Migrations\202310242203383_NullDateTime.designer.cs">
       <DependentUpon>202310242203383_NullDateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310301644347_ModifedGameNews.cs" />
+    <Compile Include="Migrations\202310301644347_ModifedGameNews.designer.cs">
+      <DependentUpon>202310301644347_ModifedGameNews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3378,6 +3382,9 @@
     <Content Include="Content\assets\dist\js\.eslintrc.json" />
     <Content Include="Content\assets\dist\js\adminlte.js.map" />
     <Content Include="Content\assets\dist\js\adminlte.min.js.map" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -3451,7 +3458,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\News\" />
     <Folder Include="Content\ckfinder\ckfinder\userfiles\" />
   </ItemGroup>
   <ItemGroup>
@@ -3526,6 +3532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310242203383_NullDateTime.resx">
       <DependentUpon>202310242203383_NullDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310301644347_ModifedGameNews.resx">
+      <DependentUpon>202310301644347_ModifedGameNews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

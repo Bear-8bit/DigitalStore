@@ -13,6 +13,9 @@ namespace DigitalStore.Models.EF
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int CategoryID { get; set; }
+        public int PublisherID { get; set; }
+        public int GameID { get; set; }
         [Required(ErrorMessage = "Tiêu đề không được để trống")]
         [StringLength(250, ErrorMessage = "Tiêu đề không được vượt quá 250 ký tự")]
         public string Title { get; set; }
