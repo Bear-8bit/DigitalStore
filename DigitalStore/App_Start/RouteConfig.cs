@@ -31,6 +31,12 @@ namespace DigitalStore
                namespaces: new[] { "DigitalStore.Controllers" }
            );
             routes.MapRoute(
+               name: "Game News",
+               url: "tin-tuc",
+               defaults: new { controller = "News", action = "Index", alias = UrlParameter.Optional },
+               namespaces: new[] { "DigitalStore.Controllers" }
+           );
+            routes.MapRoute(
                name: "GameDetail",
                url: "chi-tiet/{alias}-{id}",
                defaults: new { controller = "Games", action = "Detail", alias = UrlParameter.Optional },
