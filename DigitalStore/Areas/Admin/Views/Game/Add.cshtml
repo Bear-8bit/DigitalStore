@@ -93,6 +93,14 @@
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <div class="form-group">
+                                                            <label for="exampleInputEmail">Giá nhập</label>
+                                                            <input type="text" name="demoOriginalPrice" value="@Html.DisplayFor(x => x.OriginalPrice)" id="demoOriginalPrice" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />
+                                                            @Html.HiddenFor(x => x.OriginalPrice, new { @class = "", @placeholder = "Giá nhập" })
+                                                            @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="form-group">
                                                             <label for="exampleInputEmail">Giá</label>
                                                             <input type="text" name="demoPrice" value="0" id="demoPrice" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />
                                                             @Html.HiddenFor(x => x.Price, new { @class = "", @placeholder = "Giá" })

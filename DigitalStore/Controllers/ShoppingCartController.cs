@@ -68,7 +68,7 @@ namespace DigitalStore.Controllers
                     order.Email = req.Email;
                     cart.Items.ForEach(x => order.OrderDetails.Add(new OrderDetail
                     {
-                        Id = x.ProductId,
+                        GameId = x.ProductId,
                         Price = x.Price,
                     }));
                     order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));

@@ -189,6 +189,7 @@
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RevenueController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -265,6 +266,18 @@
     <Compile Include="Migrations\202310301644347_ModifedGameNews.cs" />
     <Compile Include="Migrations\202310301644347_ModifedGameNews.designer.cs">
       <DependentUpon>202310301644347_ModifedGameNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310310214198_UpdateOriginalPrice.cs" />
+    <Compile Include="Migrations\202310310214198_UpdateOriginalPrice.designer.cs">
+      <DependentUpon>202310310214198_UpdateOriginalPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310310254493_UpdateOrderDetail.cs" />
+    <Compile Include="Migrations\202310310254493_UpdateOrderDetail.designer.cs">
+      <DependentUpon>202310310254493_UpdateOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310310302088_UpdateOrder.cs" />
+    <Compile Include="Migrations\202310310302088_UpdateOrder.designer.cs">
+      <DependentUpon>202310310302088_UpdateOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3386,6 +3399,7 @@
     <Content Include="Areas\Admin\Views\News\Index.cshtml" />
     <Content Include="Areas\Admin\Views\News\Add.cshtml" />
     <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Revenue\Index.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -3538,6 +3552,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310301644347_ModifedGameNews.resx">
       <DependentUpon>202310301644347_ModifedGameNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310310214198_UpdateOriginalPrice.resx">
+      <DependentUpon>202310310214198_UpdateOriginalPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310310254493_UpdateOrderDetail.resx">
+      <DependentUpon>202310310254493_UpdateOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310310302088_UpdateOrder.resx">
+      <DependentUpon>202310310302088_UpdateOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
