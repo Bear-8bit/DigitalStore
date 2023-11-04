@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="~/Content/Clients/plugins/dropzone/min/dropzone.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Content/Clients/dist/css/adminlte.min.css">
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
 </head>
 @RenderBody()
 <body class="hold-transition sidebar-mini">
@@ -214,6 +215,8 @@
     <!-- AdminLTE App -->
     <script src="~/Content/Clients/dist/js/adminlte.min.js"></script>
     <script src="~/Scripts/plugin_autoNumeric-1.9.45.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     @*<script src="~/Content/Clients/dist/js/demo.js"></script>*@
     <!-- Page specific script -->
@@ -349,7 +352,7 @@
         document.querySelector("#actions .cancel").onclick = function () {
             myDropzone.removeAllFiles(true)
         }
-                                  // DropzoneJS Demo Code End</script>
+                                          // DropzoneJS Demo Code End</script>
     @RenderSection("scripts", required: false)
     <script src="~/Content/ckeditor/ckeditor/ckeditor.js"></script>
     <script src="~/Content/ckfinder/ckfinder/ckfinder.js"></script>

@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using DigitalStore.Controllers;
 using DigitalStore.Models.EF;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -35,6 +36,8 @@ namespace DigitalStore.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<ContractCategory> ContractCategories { get; set; }
+        public DbSet<Contract> Contracts {  get; set; } 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
