@@ -26,7 +26,7 @@ namespace DigitalStore
             );
             routes.MapRoute(
                name: "Contact",
-               url: "lien-he",
+               url: "doi-tac",
                defaults: new { controller = "Contact", action = "Index", alias = UrlParameter.Optional },
                namespaces: new[] { "DigitalStore.Controllers" }
            );

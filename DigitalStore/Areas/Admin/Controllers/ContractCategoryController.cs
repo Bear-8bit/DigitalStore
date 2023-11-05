@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace DigitalStore.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ContractCategoryController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

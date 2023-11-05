@@ -367,6 +367,8 @@
     <Content Include="Content\assets\dist\img\credit\paypal2.png" />
     <Content Include="Content\assets\dist\img\credit\visa.png" />
     <Content Include="Content\assets\dist\img\default-150x150.png" />
+    <Content Include="Content\assets\dist\img\heart-regular-24.png" />
+    <Content Include="Content\assets\dist\img\heart-solid-24.png" />
     <Content Include="Content\assets\dist\img\icons.png" />
     <Content Include="Content\assets\dist\img\photo1.png" />
     <Content Include="Content\assets\dist\img\photo2.png" />
@@ -3604,6 +3606,7 @@
     <Content Include="Views\ShoppingCart\CheckOutSuccess.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\Account\RegisterPublisher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

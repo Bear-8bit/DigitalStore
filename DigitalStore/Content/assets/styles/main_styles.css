@@ -1,5 +1,5 @@
 @charset "utf-8";
-font-family: 'Be Vietnam Pro', sans-serif;
+font-family: 'Be Vietnam Pro', sans-serif; 
 font-family: 'MuseoModerno', sans-serif;
 /* CSS Document */
 /******************************
@@ -1191,16 +1191,14 @@ section
 	visibility: visible;
 	opacity: 1;
 }
-.favorite.active::after
-{
+.favorite.active::after {
 	font-family: 'FontAwesome';
-	content:'\f004';
+	content: url('../dist/img/heart-solid-24.png');
 	color: #fe4c50;
 }
-.favorite::after
-{
+.favorite::after {
 	font-family: 'FontAwesome';
-	content:'\f08a';
+	content: url('../dist/img/heart-regular-24.png');
 }
 .favorite:hover::after
 {

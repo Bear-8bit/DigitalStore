@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace DigitalStore.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Publisher")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

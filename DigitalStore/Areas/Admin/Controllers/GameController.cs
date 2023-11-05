@@ -10,6 +10,7 @@ using System.Web.UI;
 
 namespace DigitalStore.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin, Publisher")]
     public class GameController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

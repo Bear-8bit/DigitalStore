@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace DigitalStore.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin, Publisher")]
     public class ContractController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

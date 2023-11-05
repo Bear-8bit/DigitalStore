@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace DigitalStore.Areas.Admin.Controllers
 {
-
+    [Authorize(Roles = "Admin, Publisher")]
     public class OrderController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
