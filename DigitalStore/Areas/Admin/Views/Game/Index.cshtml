@@ -94,51 +94,100 @@
                             var i = ((ViewBag.Page - 1) * ViewBag.PageSize) + 1; ;
                             foreach (var item in Model)
                             {
-
-                                var strCheck = item.IsActive ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
-                                var strCheckHome = item.IsHome ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
-                                var strCheckSale = item.IsSale ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
-                                var strCheckFeatured = item.IsFeatured ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
-                                var strCheckNew = item.IsNew ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
-                                <tr id="trow_@item.Id">
-                                    <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
-                                    <td>@i</td>
-                                    <td>@item.Name</td>
-                                    <td>@item.GameGenres.Name</td>
-                                    <td><img class="imggame" data-id="@item.Id" src="@item.GameImage.FirstOrDefault(x => x.IsDefault).Image" width="100" /></td>
-                                    <td>@item.Price</td>
-                                    <td>@item.CreatedDate</td>
-                                    <td class="text-center">
-                                        <a href='#' data-id="@item.Id" class="btnActive">
-                                            @Html.Raw(strCheck)
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href='#' data-id="@item.Id" class="btnHome">
-                                            @Html.Raw(strCheckHome)
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href='#' data-id="@item.Id" class="btnFeatured">
-                                            @Html.Raw(strCheckFeatured)
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href='#' data-id="@item.Id" class="btnSale">
-                                            @Html.Raw(strCheckSale)
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href='#' data-id="@item.Id" class="btnNew">
-                                            @Html.Raw(strCheckNew)
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="/Admin/Game/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
-                                        <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
-                                    </td>
-                                </tr>
-                                i++;
+                                if (item.Publishers.Name == User.Identity.Name && User.IsInRole("Publisher"))
+                                {
+                                    var strCheck = item.IsActive ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    var strCheckHome = item.IsHome ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    var strCheckSale = item.IsSale ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    var strCheckFeatured = item.IsFeatured ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    var strCheckNew = item.IsNew ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    <tr id="trow_@item.Id">
+                                        <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
+                                        <td>@i</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.GameGenres.Name</td>
+                                        <td><img class="imggame" data-id="@item.Id" src="@item.GameImage.FirstOrDefault(x => x.IsDefault).Image" width="100" /></td>
+                                        <td>@item.Price</td>
+                                        <td>@item.CreatedDate</td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnActive">
+                                                @Html.Raw(strCheck)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnHome">
+                                                @Html.Raw(strCheckHome)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnFeatured">
+                                                @Html.Raw(strCheckFeatured)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnSale">
+                                                @Html.Raw(strCheckSale)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnNew">
+                                                @Html.Raw(strCheckNew)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="/Admin/Game/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                            <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                                if (User.IsInRole("Admin"))
+                                {
+                                    var strCheck = item.IsActive ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    var strCheckHome = item.IsHome ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    var strCheckSale = item.IsSale ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    var strCheckFeatured = item.IsFeatured ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    var strCheckNew = item.IsNew ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                                    <tr id="trow_@item.Id">
+                                        <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
+                                        <td>@i</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.GameGenres.Name</td>
+                                        <td><img class="imggame" data-id="@item.Id" src="@item.GameImage.FirstOrDefault(x => x.IsDefault).Image" width="100" /></td>
+                                        <td>@item.Price</td>
+                                        <td>@item.CreatedDate</td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnActive">
+                                                @Html.Raw(strCheck)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnHome">
+                                                @Html.Raw(strCheckHome)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnFeatured">
+                                                @Html.Raw(strCheckFeatured)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnSale">
+                                                @Html.Raw(strCheckSale)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href='#' data-id="@item.Id" class="btnNew">
+                                                @Html.Raw(strCheckNew)
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="/Admin/Game/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                            <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
                             }
 
                         }

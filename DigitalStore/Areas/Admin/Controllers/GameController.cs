@@ -1,5 +1,6 @@
 ﻿using DigitalStore.Models;
 using DigitalStore.Models.EF;
+using Microsoft.AspNet.Identity;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace DigitalStore.Areas.Admin.Controllers
 
         public ActionResult Add()
         {
+            ViewBag.Publisher = new SelectList(db.Publishers.ToList(), "Id", "Name");
             ViewBag.GameGenre = new SelectList(db.GameGenres.ToList(), "Id", "Name");
             return View();
         }
@@ -39,18 +41,19 @@ namespace DigitalStore.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Add(Game model, List<string> Images, List<int> rDefault)
+        public ActionResult Add(Game model, Publisher model2, List<string> Images, List<int> rDefault)
         {
             if (ModelState.IsValid) 
             {
-                if(Images != null && Images.Count > 0) 
+                if (Images != null && Images.Count > 0)
                 {
-                    for(int i = 0; i < Images.Count; i++) 
+                    for (int i = 0; i < Images.Count; i++)
                     {
-                        if(i + 1 == rDefault[0])
+                        if (i + 1 == rDefault[0])
                         {
                             model.Image = Images[i];
-                            model.GameImage.Add(new GameImage {
+                            model.GameImage.Add(new GameImage
+                            {
                                 GameID = model.Id,
                                 Image = Images[i],
                                 IsDefault = true
@@ -73,6 +76,7 @@ namespace DigitalStore.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Publisher = new SelectList(db.Publishers.ToList(), "Id", "Name");
             ViewBag.GameGenre = new SelectList(db.GameGenres.ToList(), "Id", "Name");
             return View(model);
         }
@@ -92,6 +96,7 @@ namespace DigitalStore.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Publisher = new SelectList(db.Publishers.ToList(), "Id", "Name");
             ViewBag.GameGenre = new SelectList(db.GameGenres.ToList(), "Id", "Name");
             var item = db.Games.Find(id);
             return View(item);

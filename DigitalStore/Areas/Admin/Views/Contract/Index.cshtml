@@ -76,7 +76,7 @@
                             <th>STT</th>
                             <th>Tên</th>
                             <th>Loại hợp đồng</th>
-                            <th>Giá</th>
+                            <th>Giá trị</th>
                             <th>Ngày tạo</th>
                         </tr>
                     </thead>
@@ -87,19 +87,54 @@
                             var i = ((ViewBag.Page - 1) * ViewBag.PageSize) + 1; ;
                             foreach (var item in Model)
                             {
-                                <tr id="trow_@item.Id">
-                                    <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
-                                    <td>@i</td>
-                                    <td>@item.Name</td>
-                                    <td>@item.ContractCategories.Name</td>
-                                    <td>@item.Price</td>
-                                    <td>@item.CreatedDate</td>
-                                    <td class="text-center">
-                                        <a href="/Admin/Contract/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
-                                        <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
-                                    </td>
-                                </tr>
-                                i++;
+                                if (item.NameSideB == User.Identity.Name && User.IsInRole("Marketing Partner"))
+                                {
+                                    <tr id="trow_@item.Id">
+                                        <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
+                                        <td>@i</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.ContractCategories.Name</td>
+                                        <td>@item.Price</td>
+                                        <td>@item.CreatedDate</td>
+                                        <td class="text-center">
+                                            <a href="/Admin/Contract/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                            <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                                if (item.NameSideB == User.Identity.Name && User.IsInRole("Publisher"))
+                                {
+                                    <tr id="trow_@item.Id">
+                                        <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
+                                        <td>@i</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.ContractCategories.Name</td>
+                                        <td>@item.Price</td>
+                                        <td>@item.CreatedDate</td>
+                                        <td class="text-center">
+                                            <a href="/Admin/Contract/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                            <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <tr id="trow_@item.Id">
+                                        <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
+                                        <td>@i</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.ContractCategories.Name</td>
+                                        <td>@item.Price</td>
+                                        <td>@item.CreatedDate</td>
+                                        <td class="text-center">
+                                            <a href="/Admin/Contract/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                            <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
                             }
 
                         }

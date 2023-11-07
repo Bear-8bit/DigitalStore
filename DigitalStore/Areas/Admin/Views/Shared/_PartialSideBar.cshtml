@@ -31,36 +31,15 @@
             {
                 <li class="nav-item">
                     <a href="/Admin/Menu" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class='nav-icon bx bx-list-ul'></i>
                         <p>
                             Danh mục Website
                         </p>
                     </a>
-
-                    @* <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="../../index.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Dashboard v1</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../../index2.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Dashboard v2</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../../index3.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Dashboard v3</p>
-                        </a>
-                    </li>
-                </ul>*@
                 </li>
                 <li class="nav-item">
                     <a href="/Admin/Role" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class='nav-icon bx bx-universal-access'></i>
                         <p>
                             Danh sách quyền
                             @*<span class="right badge badge-danger">New</span>*@
@@ -69,7 +48,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="/Admin/Revenue" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class='nav-icon bx bx-line-chart'></i>
                         <p>
                             Thống kê doanh thu
                             @*<span class="right badge badge-danger">New</span>*@
@@ -78,7 +57,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="/Admin/Account" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class='nav-icon bx bxs-user-account'></i>
                         <p>
                             Danh sách tài khoản
                             @*<span class="right badge badge-danger">New</span>*@
@@ -86,91 +65,169 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/Admin/NewsCategory" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+
+                    <a href="#" class="nav-link">
+                        <i class='nav-icon bx bx-briefcase-alt-2'></i>
                         <p>
-                            Danh mục tin tức
+                            Quản lý đối tác
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Admin/Publisher" class="nav-link">
+                                <i class='bx bx-circle' style="font-size: 10px;"></i>
+                                <p>
+                                    Nhà phát hành
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Admin/MarketingPartner" class="nav-link">
+                                <i class='bx bx-circle' style="font-size: 10px;"></i>
+                                <p>
+                                    Đối tác quảng cáo
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+
+                    <a href="#" class="nav-link">
+                        <i class='bx bx-book-content'></i>
+                        <p>
+                            Quản lý hợp đồng
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Admin/ContractCategory" class="nav-link">
+                                <i class='bx bx-circle' style="font-size: 10px;"></i>
+                                <p>Loại hợp đồng</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Admin/Contract" class="nav-link">
+                                <i class='bx bx-circle' style="font-size: 10px;"></i>
+                                <p>Danh sách hợp đồng</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+
+                    <a href="#" class="nav-link">
+                        <i class='nav-icon bx bx-news'></i>
+                        <p>
+                            Quản lý tin tức
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Admin/NewsCategory" class="nav-link">
+                                <i class='bx bx-circle' style="font-size: 10px;"></i>
+                                <p>
+                                    Danh mục tin tức
+                                    @*<span class="right badge badge-danger">New</span>*@
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Admin/News" class="nav-link">
+                                <i class='bx bx-circle' style="font-size: 10px;"></i>
+                                <p>
+                                    Danh sách tin tức
+                                    @*<span class="right badge badge-danger">New</span>*@
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+
+                    <a href="#" class="nav-link">
+                        <i class='nav-icon bx bx-game'></i>
+                        <p>
+                            Quản lý game
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Admin/Game" class="nav-link">
+                                <i class='bx bx-circle' style="font-size: 10px;"></i>
+                                <p>
+                                    Game
+                                    @*<span class="right badge badge-danger">New</span>*@
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Admin/GameGenre" class="nav-link">
+                                <i class='bx bx-circle' style="font-size: 10px;"></i>
+                                <p>
+                                    Thể loại Game
+                                    @*<span class="right badge badge-danger">New</span>*@
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            }
+
+
+
+            @if (User.IsInRole("Publisher"))
+            {
+                <li class="nav-item">
+                    <a href="/Admin/News" class="nav-link">
+                        <i class='bx bx-news'></i>
+                        <p>
+                            Danh sách tin tức
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/Admin/Game" class="nav-link">
+                        <i class='bx bx-game'></i>
+                        <p>
+                            Game
                             @*<span class="right badge badge-danger">New</span>*@
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/Admin/Publisher" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="/Admin/Order" class="nav-link">
+                        <i class='bx bx-receipt'></i>
                         <p>
-                            Nhà Phát hành
+                            Đơn hàng
                             @*<span class="right badge badge-danger">New</span>*@
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/Admin/GameGenre" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Thể loại Game
-                            @*<span class="right badge badge-danger">New</span>*@
-                        </p>
+                    <a href="/Admin/Contract" class="nav-link">
+                        <i class='bx bx-book-content'></i>
+                        <p>Danh sách hợp đồng</p>
+                    </a>
+                </li>
+            }
+
+            @if (User.IsInRole("Marketing Partner"))
+            {
+                <li class="nav-item">
+                    <a href="/Admin/Contract" class="nav-link">
+                        <i class='bx bx-book-content'></i>
+                        <p>Danh sách hợp đồng</p>
                     </a>
                 </li>
             }
 
             <li class="nav-item">
-
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Quản lý hợp đồng
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="/Admin/ContractCategory" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Loại hợp đồng</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/Admin/Contract" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Danh sách hợp đồng</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="nav-item">
-                <a href="/Admin/News" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Danh sách tin tức
-                        @*<span class="right badge badge-danger">New</span>*@
-                    </p>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/Admin/Game" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Game
-                        @*<span class="right badge badge-danger">New</span>*@
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/Admin/Order" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Đơn hàng
-                        @*<span class="right badge badge-danger">New</span>*@
-                    </p>
-                </a>
-            </li>
-
-            <li class="nav-item">
                 <a href="javascript:document.getElementById('logOffForm').submit()" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class='nav-icon bx bx-log-out'></i>
                     <p>
                         Đăng xuất
                         @*<span class="right badge badge-danger">New</span>*@

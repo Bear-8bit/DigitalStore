@@ -86,10 +86,14 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Thể loại Game</label>
-                                                    @Html.DropDownListFor(x => x.GameGenreId, ViewBag.GameGenre as SelectList, "Chọn thể loại Game", new { @class = "form-control", @placeholder = "Danh mục sản phẩm" })
+                                                    @Html.DropDownListFor(x => x.GameGenreId, ViewBag.GameGenre as SelectList, "Chọn thể loại Game", new { @class = "form-control", @placeholder = "Danh sách thể loại game" })
                                                     @Html.ValidationMessageFor(x => x.GameGenreId, null, new { @class = "text-danger" })
                                                 </div>
-
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Nhà phát hành</label>
+                                                    @Html.DropDownListFor(x => x.PublisherId, ViewBag.Publisher as SelectList, "Chọn nhà phát hành", new { @class = "form-control", @placeholder = "Danh sách nhà phát hành" })
+                                                    @Html.ValidationMessageFor(x => x.PublisherId, null, new { @class = "text-danger" })
+                                                </div>
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <div class="form-group">

@@ -186,6 +186,7 @@
     <Compile Include="Areas\Admin\Controllers\GameGenreController.cs" />
     <Compile Include="Areas\Admin\Controllers\GameImagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MarketingPartnerController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
@@ -309,6 +310,18 @@
     <Compile Include="Migrations\202311041450136_Contract1.designer.cs">
       <DependentUpon>202311041450136_Contract1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311071623523_AddMarketingPartner.cs" />
+    <Compile Include="Migrations\202311071623523_AddMarketingPartner.designer.cs">
+      <DependentUpon>202311071623523_AddMarketingPartner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311071859257_ModifiedGame.cs" />
+    <Compile Include="Migrations\202311071859257_ModifiedGame.designer.cs">
+      <DependentUpon>202311071859257_ModifiedGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311071908156_updateGame.cs" />
+    <Compile Include="Migrations\202311071908156_updateGame.designer.cs">
+      <DependentUpon>202311071908156_updateGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -320,6 +333,7 @@
     <Compile Include="Models\EF\GameGenre.cs" />
     <Compile Include="Models\EF\GameImage.cs" />
     <Compile Include="Models\EF\GameNews.cs" />
+    <Compile Include="Models\EF\MarketingPartner.cs" />
     <Compile Include="Models\EF\Menu.cs" />
     <Compile Include="Models\EF\NewsCategory.cs" />
     <Compile Include="Models\EF\Order.cs" />
@@ -3453,6 +3467,9 @@
     <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
     <Content Include="Content\bootstrap-datepicker.css.map" />
     <Content Include="Areas\Admin\Views\Contract\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MarketingPartner\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MarketingPartner\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\MarketingPartner\Edit.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -3607,6 +3624,7 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\Account\RegisterPublisher.cshtml" />
+    <Content Include="Views\Account\RegisterMarketingPartner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3718,6 +3736,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311041450136_Contract1.resx">
       <DependentUpon>202311041450136_Contract1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311071623523_AddMarketingPartner.resx">
+      <DependentUpon>202311071623523_AddMarketingPartner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311071859257_ModifiedGame.resx">
+      <DependentUpon>202311071859257_ModifiedGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311071908156_updateGame.resx">
+      <DependentUpon>202311071908156_updateGame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,12 +10,14 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DigitalStore.Models;
 using System.Web.Security;
+using DigitalStore.Models.EF;
 
 namespace DigitalStore.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -187,7 +189,7 @@ namespace DigitalStore.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> RegisterPublisher(CreateAccountViewModel model)
+        public async Task<ActionResult> RegisterPublisher(CreateAccountViewModel model, Publisher model2)
         {
             if (ModelState.IsValid)
             {
@@ -195,10 +197,60 @@ namespace DigitalStore.Controllers
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FullName = model.FullName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 UserManager.AddToRole(user.Id, model.Role = "Publisher");
+                model2.Name = model.UserName;
+                model2.Email = model.Email;
+                model2.CreatedDate = DateTime.Now;
+                model2.ModifiedDate = DateTime.Now;
+                db.Publishers.Add(model2);
+                db.SaveChanges();
+
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                    // Send an email with this link
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
+                    return RedirectToAction("Index", "Home");
+                }
+                AddErrors(result);
+            }
+           
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+
+        // 
+        // GET: /Account/Register MarketingPartner
+        [AllowAnonymous]
+        public ActionResult RegisterMarketingPartner()
+        {
+            return View();
+        }
+        //
+        // POST: /Account/Register Advertisement
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterMarketingPartner(CreateAccountViewModel model, MarketingPartner model2)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FullName = model.FullName };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                UserManager.AddToRole(user.Id, model.Role = "Marketing Partner");
+                model2.Name = model.UserName;
+                model2.Email = model.Email;
+                model2.CreatedDate = DateTime.Now;
+                model2.ModifiedDate = DateTime.Now;
+                db.MarketingPartners.Add(model2);
+                db.SaveChanges();
+
+                if (result.Succeeded)
+                {
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

@@ -1,5 +1,7 @@
-﻿using DigitalStore.Models;
+﻿using DigitalStore.Controllers;
+using DigitalStore.Models;
 using DigitalStore.Models.EF;
+using Microsoft.AspNet.Identity;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Web.Mvc;
 
 namespace DigitalStore.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin, Publisher")]
+    [Authorize(Roles = "Admin, Publisher, Marketing Partner")]
     public class ContractController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -20,7 +22,7 @@ namespace DigitalStore.Areas.Admin.Controllers
             var pageSize = 10;
             if (page == null)
             {
-                page = 1;
+               page = 1;
             }
             var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
             items = items.ToPagedList(pageIndex, pageSize);
@@ -42,10 +44,12 @@ namespace DigitalStore.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 Random rd = new Random();
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;
                 model.Contract_Code = "HĐ" + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
+                model.NameSideA = "Admin Website";
                 db.Contracts.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");

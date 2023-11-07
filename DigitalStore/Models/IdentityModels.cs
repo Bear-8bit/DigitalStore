@@ -38,6 +38,7 @@ namespace DigitalStore.Models
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<ContractCategory> ContractCategories { get; set; }
         public DbSet<Contract> Contracts {  get; set; } 
+        public DbSet<MarketingPartner> MarketingPartners { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

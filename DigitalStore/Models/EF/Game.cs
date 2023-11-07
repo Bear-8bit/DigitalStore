@@ -21,6 +21,8 @@ namespace DigitalStore.Models.EF
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int GameGenreId { get; set; }
+        public int PublisherId { get; set; }
+        public string PublisherName { get; set; }
         public string Name { get; set; }
         public string Alias { get; set; }
         public string Description { get; set; }
@@ -36,7 +38,7 @@ namespace DigitalStore.Models.EF
         public bool IsActive { get; set; }
 
         public virtual GameGenre GameGenres { get; set; }
-        public virtual Publisher Publisher { get; set; }
+        public virtual Publisher Publishers { get; set; }
         public virtual ICollection<GameImage> GameImage { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public ICollection<GameNews> GameNews { get; set; }

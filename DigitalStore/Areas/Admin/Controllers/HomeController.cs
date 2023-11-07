@@ -8,7 +8,7 @@ namespace DigitalStore.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize(Roles = "Admin, Publisher")]
+        [Authorize(Roles = "Admin, Publisher, Marketing Partner")]
         // GET: Admin/Home
         public ActionResult Index()
         {
