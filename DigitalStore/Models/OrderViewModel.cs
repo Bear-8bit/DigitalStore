@@ -18,5 +18,6 @@ namespace DigitalStore.Models
         public string Address { get; set; }
         public int Quantity { get; set; }
         public int TypePayment { get; set; }
+        public int TypePaymentVN { get; set; }
     }
 }

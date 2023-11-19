@@ -24,6 +24,7 @@ namespace DigitalStore.Models.EF
         public System.Nullable<DateTime> Order_Date { get; set; }
         public decimal TotalAmount { get; set; }
         public int TypePayment {  get; set; }
+        public int Status { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
