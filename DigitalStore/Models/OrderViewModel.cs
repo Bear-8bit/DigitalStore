@@ -16,6 +16,7 @@ namespace DigitalStore.Models
         public string Phone { get; set; }
         [Required(ErrorMessage = "Địa chỉ không được để trống")]
         public string Address { get; set; }
+        public string CustomerId { get; set; }
         public int Quantity { get; set; }
         public int TypePayment { get; set; }
         public int TypePaymentVN { get; set; }

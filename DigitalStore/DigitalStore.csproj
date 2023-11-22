@@ -202,6 +202,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -326,6 +327,18 @@
     <Compile Include="Migrations\202311160705070_StatucOrder.designer.cs">
       <DependentUpon>202311160705070_StatucOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311192008137_CustomerIDOrder.cs" />
+    <Compile Include="Migrations\202311192008137_CustomerIDOrder.designer.cs">
+      <DependentUpon>202311192008137_CustomerIDOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311221607442_tbReview.cs" />
+    <Compile Include="Migrations\202311221607442_tbReview.designer.cs">
+      <DependentUpon>202311221607442_tbReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311221629576_ModifiedReview.cs" />
+    <Compile Include="Migrations\202311221629576_ModifiedReview.designer.cs">
+      <DependentUpon>202311221629576_ModifiedReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -343,6 +356,7 @@
     <Compile Include="Models\EF\Order.cs" />
     <Compile Include="Models\EF\OrderDetail.cs" />
     <Compile Include="Models\EF\Publisher.cs" />
+    <Compile Include="Models\EF\Review.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
@@ -3634,6 +3648,8 @@
     <Content Include="Views\Account\RegisterMarketingPartner.cshtml" />
     <Content Include="Views\ShoppingCart\VnpayReturn.cshtml" />
     <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Review\_Review.cshtml" />
+    <Content Include="Views\Review\_Load_Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3757,6 +3773,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311160705070_StatucOrder.resx">
       <DependentUpon>202311160705070_StatucOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311192008137_CustomerIDOrder.resx">
+      <DependentUpon>202311192008137_CustomerIDOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311221607442_tbReview.resx">
+      <DependentUpon>202311221607442_tbReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311221629576_ModifiedReview.resx">
+      <DependentUpon>202311221629576_ModifiedReview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -24,6 +24,8 @@ namespace DigitalStore.Controllers
         public ActionResult Detail(string alias, int id)
         {
             var item = db.Games.Find(id);
+            var countReview = db.Reviews.Where(x => x.GameId == id).Count();    
+            ViewBag.CountReview = countReview;
             return View(item);
         }
         public ActionResult GameGenre(string alias, int? id)
@@ -64,5 +66,7 @@ namespace DigitalStore.Controllers
             var items = db.Games.Where(x => x.IsHome && x.IsActive && x.IsNew).Take(12).ToList();
             return PartialView(items);
         }
+
+      
     }
 }

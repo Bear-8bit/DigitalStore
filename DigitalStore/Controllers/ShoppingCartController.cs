@@ -16,6 +16,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity.Owin;
 using System.EnterpriseServices;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 
 namespace DigitalStore.Controllers
 {
@@ -124,6 +125,11 @@ namespace DigitalStore.Controllers
                     order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
                     order.TypePayment = req.TypePayment;
                     order.CreatedDate = DateTime.Now;
+                    if(User.Identity.IsAuthenticated)
+                    {
+                        order.CustomerId = User.Identity.GetUserId();
+                    }
+                    
                     //order.ModifiedDate = DateTime.Now;
                     Random rd = new Random();
                     order.Order_Code = "DH" + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);

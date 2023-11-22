@@ -16,6 +16,7 @@ namespace DigitalStore.Models.EF
             this.GameNews = new HashSet<GameNews>();
             this.GameImage = new HashSet<GameImage>();
             this.OrderDetails = new HashSet<OrderDetail>();
+            this.Reviews = new HashSet<Review>();   
         }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
@@ -42,6 +43,7 @@ namespace DigitalStore.Models.EF
         public virtual ICollection<GameImage> GameImage { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public ICollection<GameNews> GameNews { get; set; }
+        public ICollection<Review> Reviews { get; set; }
 
     }
 }

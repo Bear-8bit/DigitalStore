@@ -39,6 +39,7 @@ namespace DigitalStore.Models
         public DbSet<ContractCategory> ContractCategories { get; set; }
         public DbSet<Contract> Contracts {  get; set; } 
         public DbSet<MarketingPartner> MarketingPartners { get; set; }
+        public DbSet<Review> Reviews { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

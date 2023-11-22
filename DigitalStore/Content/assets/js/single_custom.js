@@ -242,7 +242,7 @@ jQuery(document).ready(function($)
 		if($('.user_star_rating li').length)
 		{
 			var stars = $('.user_star_rating li');
-
+			var dem = 0;
 			stars.each(function()
 			{
 				var star = $(this);
@@ -260,7 +260,9 @@ jQuery(document).ready(function($)
 					{
 						$(stars[x]).find('i').removeClass('fa-star-o');
 						$(stars[x]).find('i').addClass('fa-star');
+						dem++;
 					};
+					$('#txtRate').val(dem);
 				});
 			});
 		}

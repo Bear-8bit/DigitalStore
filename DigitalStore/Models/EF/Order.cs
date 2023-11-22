@@ -25,6 +25,7 @@ namespace DigitalStore.Models.EF
         public decimal TotalAmount { get; set; }
         public int TypePayment {  get; set; }
         public int Status { get; set; }
+        public string CustomerId { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
