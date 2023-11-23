@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Policy;
 using System.Web;
+using System.Web.UI.WebControls;
+using System.Web.WebPages;
 
 namespace DigitalStore.Models.EF
 {
@@ -17,6 +19,7 @@ namespace DigitalStore.Models.EF
             this.GameImage = new HashSet<GameImage>();
             this.OrderDetails = new HashSet<OrderDetail>();
             this.Reviews = new HashSet<Review>();   
+            this.Wishlists = new HashSet<Wishlist>();
         }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
@@ -42,8 +45,10 @@ namespace DigitalStore.Models.EF
         public virtual Publisher Publishers { get; set; }
         public virtual ICollection<GameImage> GameImage { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<Wishlist> Wishlists { get; set; }
         public ICollection<GameNews> GameNews { get; set; }
         public ICollection<Review> Reviews { get; set; }
+
 
     }
 }

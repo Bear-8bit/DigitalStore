@@ -204,6 +204,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -339,6 +340,10 @@
     <Compile Include="Migrations\202311221629576_ModifiedReview.designer.cs">
       <DependentUpon>202311221629576_ModifiedReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311221950028_TableWishlist.cs" />
+    <Compile Include="Migrations\202311221950028_TableWishlist.designer.cs">
+      <DependentUpon>202311221950028_TableWishlist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -357,6 +362,7 @@
     <Compile Include="Models\EF\OrderDetail.cs" />
     <Compile Include="Models\EF\Publisher.cs" />
     <Compile Include="Models\EF\Review.cs" />
+    <Compile Include="Models\EF\Wishlist.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
@@ -3650,6 +3656,7 @@
     <Content Include="Views\Account\Profile.cshtml" />
     <Content Include="Views\Review\_Review.cshtml" />
     <Content Include="Views\Review\_Load_Review.cshtml" />
+    <Content Include="Views\WishList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3782,6 +3789,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311221629576_ModifiedReview.resx">
       <DependentUpon>202311221629576_ModifiedReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311221950028_TableWishlist.resx">
+      <DependentUpon>202311221950028_TableWishlist.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
