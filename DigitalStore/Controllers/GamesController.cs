@@ -67,6 +67,10 @@ namespace DigitalStore.Controllers
             return PartialView(items);
         }
 
-      
+        public ActionResult Partial_Related()
+        {
+            var items = db.Games.ToList();
+            return PartialView(items);
+        }
     }
 }

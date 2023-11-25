@@ -44,6 +44,8 @@
                     </div>
                     <p>
                         <input type="text" id="amount" readonly style="border:0; color:#212A3E; font-weight:bold;">
+                        <input type="hidden" id="FromAmount" />
+                        <input type="hidden" id="ToAmount" />
                     </p>
                     <div id="slider-range"></div>
                     <div class="filter_button"><span>Lọc</span></div>
@@ -117,12 +119,12 @@
                                                     @if (item.PriceSale > 0)
                                                     {
                                                         <div class="product_price" style="color: #162938;">@DigitalStore.Common.Common.FormatNumber(item.PriceSale, 0) đ<span>@DigitalStore.Common.Common.FormatNumber(item.Price, 0) vnđ</span></div>
-                                                        <div style="display:none;" class="in_product_price">@item.PriceSale</div>
+                                                        <div style="display:none;" value="@item.PriceSale" class="in_product_price">@item.PriceSale</div>
                                                     }
                                                     else
                                                     {
                                                         <div class="product_price" style="color: #162938;">@DigitalStore.Common.Common.FormatNumber(item.Price, 0) vnđ</div>
-                                                        <div style="display:none;" class="in_product_price">@item.PriceSale</div>
+                                                        <div style="display:none;" value="@item.Price" class="in_product_price">@item.Price</div>
                                                     }
                                                 </div>
                                             </div>

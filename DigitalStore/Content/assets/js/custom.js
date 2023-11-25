@@ -433,7 +433,19 @@ jQuery(document).ready(function($)
     			{
     				slider1.trigger('next.owl.carousel');
     			});
-    		}
+			}
+
+			if ($('.product_slider_navs_left').length) {
+				$('.product_slider_navs_left').on('click', function () {
+					slider1.trigger('prev.owl.carousel');
+				});
+			}
+
+			if ($('.product_slider_navs_right').length) {
+				$('.product_slider_navs_right').on('click', function () {
+					slider1.trigger('next.owl.carousel');
+				});
+			}
     	}
     }
 });

@@ -396,7 +396,7 @@ jQuery(document).ready(function($)
 						var priceRange = $('#amount').val();
 						var priceMin = parseFloat(priceRange.split('-')[0].replace('đ', ''));
 						var priceMax = parseFloat(priceRange.split('-')[1].replace('đ', ''));
-						var itemPrice = $(this).find('.in_product_price').clone().children().remove().end().text().replace('đ', '');
+						var itemPrice = $(this).find('.in_product_price').clone().children().remove().end().text();
 
 						return (itemPrice > priceMin) && (itemPrice < priceMax);
 					},
@@ -422,10 +422,10 @@ jQuery(document).ready(function($)
 			{
 				range: true,
 				min: 0,
-				max: 500000,
-				values: [0, 500000],
+				max: 1000000,
+				values: [0, 1000000],
 				slide: function (event, ui) {
-					$("#amount").val(ui.values[0] + "VNĐ" + " - " + ui.values[1] + "VNĐ");
+					$("#amount").val(ui.values[0] + " VNĐ" + " - " + ui.values[1] + " VNĐ");
 					$('#FromAmount').val(ui.values[0]);
 					$('#ToAmount').val(ui.values[1]);
 				}

@@ -81,43 +81,43 @@ namespace DigitalStore.Common
             var str = "";
             if (rate == 1)
             {
-                str = @"<li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>";
+                str = @"<li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>";
             }
             if (rate == 2)
             {
-                str = @"<li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>";
+                str = @"<li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>";
             }
             if (rate == 3)
             {
-                str = @"<li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>";
+                str = @"<li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>";
             }
             if (rate == 4)
             {
-                str = @"<li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star-o' aria-hidden='true'></i></li>";
+                str = @"<li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>";
             }
             if (rate == 5)
             {
-                str = @"<li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>
-                        <li><i class = 'fa fa-star' aria-hidden='true'></i></li>";
+                str = @"<li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bxs-star' style='color:rgba(214,253,0,0.98)'></i></li>";
             }
             return str;
         }

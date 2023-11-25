@@ -115,8 +115,8 @@ p a:hover::after
 }
 ::selection
 {
-	background: #fde0db;
-	color: #FF6347;
+	background: #2a475e;
+	color: #c7d5e0;
 }
 p::selection
 {
@@ -148,35 +148,35 @@ h6::selection
 {
 	font-size: 16px !important;
 	font-weight: 500;
-	color: #777777 !important;
+	color: #1b2838 !important;
 }
 :-moz-placeholder /* older Firefox*/
 {
 	font-size: 16px !important;
 	font-weight: 500;
-	color: #777777 !important;
+	color: #1b2838 !important;
 }
 ::-moz-placeholder /* Firefox 19+ */
 {
 	font-size: 16px !important;
 	font-weight: 500;
-	color: #777777 !important;
+	color: #1b2838 !important;
 }
 :-ms-input-placeholder
 {
 	font-size: 16px !important;
 	font-weight: 500;
-	color: #777777 !important;
+	color: #1b2838 !important;
 }
 ::input-placeholder
 {
 	font-size: 16px !important;
 	font-weight: 500;
-	color: #777777 !important;
+	color: #1b2838 !important;
 }
 .form-control
 {
-	color: #db5246;
+	color: #1b2838;
 }
 section
 {
@@ -1376,6 +1376,16 @@ section
 }
 .product_slider_nav_right
 {
+	top: 50%;
+	right: 17.1px;
+}
+
+.product_slider_navs_left {
+	top: 50%;
+	left: 0;
+}
+
+.product_slider_navs_right {
 	top: 50%;
 	right: 17.1px;
 }

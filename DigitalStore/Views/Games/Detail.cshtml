@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Detail";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_styles.css?version=1">
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_responsive.css">
 @if (Model != null)
 {
@@ -36,18 +36,15 @@
                         <div class="product_price" style="color: #162938">@DigitalStore.Common.Common.FormatNumber(Model.Price, 0) đ</div>
                     }
                     <ul class="star_rating">
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
                     </ul>
-                    <div class="product_color">
-
-                    </div>
                     <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                         <div class="red_buttons add_to_cart_buttons"><a href="#" class="btnAddToCart" data-id="@Model.Id">Thêm vào giỏ hàng</a></div>
-                        <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
+                        <div class="product_favorite d-flex flex-column align-items-center justify-content-center top-10"></div>
                     </div>
                 </div>
             </div>
@@ -104,9 +101,9 @@
                 <div class="col">
                     <div class="tabs_container">
                         <ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
-                            <li class="tab active" data-active-tab="tab_1"><span>Description</span></li>
-                            <li class="tab" data-active-tab="tab_2"><span>System Requirement</span></li>
-                            <li class="tab" data-active-tab="tab_3"><span>Reviews (@ViewBag.CountReview )</span></li>
+                            <li class="tab active" data-active-tab="tab_1"><span>Chi tiết</span></li>
+                            <li class="tab" data-active-tab="tab_2"><span>Yêu cầu cấu hình</span></li>
+                            <li class="tab" data-active-tab="tab_3"><span>Đánh giá (@ViewBag.CountReview )</span></li>
                         </ul>
                     </div>
                 </div>
@@ -118,33 +115,15 @@
 
                     <div id="tab_1" class="tab_container active">
                         <div class="row">
-                            <div class="col-lg-5 desc_col">
+                            <div class="col-lg-10 desc_col">
                                 <div class="tab_title">
-                                    <h4>Description</h4>
+                                    <h4>Chi tiết</h4>
                                 </div>
                                 <div class="tab_text_block">
-                                    <h2>Minecraft Simulation</h2>
-                                    <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+                                    <h2>@Model.Name</h2>
+                                    <p>@Html.Raw(Model.Detail)</p>
                                 </div>
-                                <div class="tab_image">
-                                    <img src="test/seki01.jpg" alt="">
-                                </div>
-                                <div class="tab_text_block">
-                                    <h2>Dark Souls</h2>
-                                    <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 offset-lg-2 desc_col">
-                                <div class="tab_image">
-                                    <img src="test/seki02.jpg" alt="">
-                                </div>
-                                <div class="tab_text_block">
-                                    <h2>Miyazaki</h2>
-                                    <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-                                </div>
-                                <div class="tab_image desc_last">
-                                    <img src="test/seki03.jpg" alt="">
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -154,7 +133,7 @@
                     <div id="tab_2" class="tab_container">
                         <div class="additional_info_col">
                             <div class=" tab_title additional_info_title">
-                                <h4>System Requirement</h4>
+                                <h4>Yêu cầu cấu hình</h4>
                             </div>
                         </div>
                         <div class="row">
@@ -191,16 +170,33 @@
                             <!-- User Reviews -->
 
                             <div class="col-lg-6 reviews_col">
-                               @Html.Action("_Load_Review", "Review", new { gameId = Model.Id })
+                                @Html.Action("_Load_Review", "Review", new { gameId = Model.Id })
                             </div>
 
                             <!-- Add Review -->
+                            @if (!Request.IsAuthenticated)
+                            {
+                                <div class="col-lg-6 add_review_col" style="top: 100px;">
 
-                            <div class="col-lg-6 add_review_col">
+                                    <div>
+                                        <h3 style="text-align: center; line-height: 40px;">Bạn phải đăng nhập để thực hiện đánh giá sản phẩm</h3>
+                                    </div>
+                                    <div style="left: 210px;">
+                                         <button class="btn btn-sm border-1" style="color: #F1F6F9;">
+                                            <a class="btn" style="color: #212A3E;" type="button" href="/Account/Login">Đăng nhập</a>
+                                         </button>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-lg-6 add_review_col">
 
-                                @Html.Action("_Review", "Review", new { gameId = Model.Id })
+                                    @Html.Action("_Review", "Review", new { gameId = Model.Id })
 
-                            </div>
+                                </div>
+                            }
+
 
                         </div>
                     </div>
@@ -211,9 +207,22 @@
 
     </div>
 
+    <!-- Best-seller -->
+    
+   @Html.Action("Partial_Related","Games")
+ 
+    <!-- Newsletter -->
+
+    <div class="newsletter">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
 }
 
 @section scripts{
-    <script src="~/Content/assets/js/single_custom.js"></script>
+    <script src="~/Content/assets/js/single_custom.js?version=1"></script>
 }
 

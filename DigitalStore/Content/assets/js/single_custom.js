@@ -253,13 +253,13 @@ jQuery(document).ready(function($)
 
 					stars.find('i').each(function()
 					{
-						$(this).removeClass('fa-star');
-						$(this).addClass('fa-star-o');
+						$(this).removeClass('bxs-star');
+						$(this).addClass('bx-star');
 					});
 					for(var x = 0; x <= i; x++)
 					{
-						$(stars[x]).find('i').removeClass('fa-star-o');
-						$(stars[x]).find('i').addClass('fa-star');
+						$(stars[x]).find('i').removeClass('bx-star');
+						$(stars[x]).find('i').addClass('bxs-star');
 						dem++;
 					};
 					$('#txtRate').val(dem);

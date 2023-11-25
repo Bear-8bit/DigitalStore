@@ -112,12 +112,12 @@ p a:hover::after
 }
 ::selection
 {
-	background: #fde0db;
-	color: #FF6347;
+	background: #2a475e;
+	color: #c7d5e0;
 }
 p::selection
 {
-	background: #fde0db;
+	background: #2a475e;
 }
 h1{font-size: 72px;}
 h2{font-size: 36px;}
@@ -986,6 +986,8 @@ section
 }
 .product_details_title p
 {
+	height: 160px;
+	overflow: hidden;
 	margin-top: 12px;
 }
 .free_delivery
@@ -1035,7 +1037,7 @@ section
 .star_rating
 {
 	display: inline-block;
-	margin-left: 33px;
+	margin-left: -10px;
 }
 .star_rating li
 {
@@ -1106,7 +1108,7 @@ section
 .add_to_cart_button
 {
 	width: 160px;
-	margin-left: 19px;
+	
 	font-size: 12px !important;
 }
 .product_favorite
@@ -1125,15 +1127,24 @@ section
 .product_favorite::after
 {
 	font-family: 'FontAwesome';
-	content:'\f08a';
+	content: url('../dist/img/heart-regular-24.png');
 	font-size: 14px;
 }
 .product_favorite.active::after
 {
-	content:'\f004';
+	content: url('../dist/img/heart-solid-24.png');
+	
 	color: #fe4c50;
 }
 
+.favorite::after {
+	font-family: 'FontAwesome';
+	content: url('../dist/img/heart-regular-24.png');
+}
+
+.favorite:hover::after {
+	color: #fe4c50;
+}
 /*********************************
 7. Best Sellers
 *********************************/
@@ -1424,13 +1435,13 @@ section
 .favorite.active::after
 {
 	font-family: 'FontAwesome';
-	content:'\f004';
+	content: url('../dist/img/heart-solid-24.png');
 	color: #fe4c50;
 }
 .favorite::after
 {
 	font-family: 'FontAwesome';
-	content:'\f08a';
+	content: url('../dist/img/heart-regular-24.png');
 }
 .favorite:hover::after
 {
@@ -1441,12 +1452,12 @@ section
 7. Tabs
 *********************************/
 
-.tabs_section_container
-{
-	width: 100%;
+.tabs_section_container {
+	width: 77%;
+	margin-left: 150px;
 	padding-bottom: 80px;
 	border-bottom: solid 1px #ebebeb;
-	margin-bottom: 50px;
+	margin-bottom: 1px;
 }
 .tabs_container
 {
@@ -1503,7 +1514,7 @@ section
 }
 .tab_title
 {
-	margin-bottom: 98px;
+	margin-bottom: 18px;
 }
 .tab_title h4
 {
@@ -1513,7 +1524,7 @@ section
 }
 .tab_text_block
 {
-	margin-bottom: 133px;
+	margin-bottom: 0px;
 }
 .tab_text_block p
 {
@@ -1573,7 +1584,7 @@ section
 }
 .user_rating .star_rating
 {
-	margin-left: 5px;
+	margin-left: -40px;
 	margin-top: 13px;
 }
 .user_rating .star_rating li
@@ -1610,7 +1621,7 @@ section
 
 .add_review
 {
-	margin-top: 94px;
+	margin-top: 34px;
 }
 #review_form > div
 {
@@ -1658,7 +1669,7 @@ section
 .user_star_rating
 {
 	display: inline-block;
-	margin-left: 18px;
+	margin-left: -40px;
 }
 .user_star_rating li
 {
