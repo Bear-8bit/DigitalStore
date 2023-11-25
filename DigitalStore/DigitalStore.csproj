@@ -461,6 +461,7 @@
     <Content Include="Content\assets\styles\contact_responsive.css" />
     <Content Include="Content\assets\styles\contact_styles.css" />
     <Content Include="Content\assets\styles\main_styles.css" />
+    <Content Include="Content\assets\styles\profile.css" />
     <Content Include="Content\assets\styles\responsive.css" />
     <Content Include="Content\assets\styles\single_responsive.css" />
     <Content Include="Content\assets\styles\single_styles.css" />
@@ -3658,6 +3659,7 @@
     <Content Include="Views\Review\_Load_Review.cshtml" />
     <Content Include="Views\WishList\Index.cshtml" />
     <Content Include="Views\Games\Partial_Related.cshtml" />
+    <Content Include="Views\Review\PostReview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

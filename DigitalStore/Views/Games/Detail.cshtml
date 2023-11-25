@@ -36,11 +36,7 @@
                         <div class="product_price" style="color: #162938">@DigitalStore.Common.Common.FormatNumber(Model.Price, 0) đ</div>
                     }
                     <ul class="star_rating">
-                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
-                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
-                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
-                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
-                        <li><i class='bx bx-star' style='color:rgba(214,253,0,0.98)'></i></li>
+
                     </ul>
                     <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                         <div class="red_buttons add_to_cart_buttons"><a href="#" class="btnAddToCart" data-id="@Model.Id">Thêm vào giỏ hàng</a></div>
@@ -182,9 +178,9 @@
                                         <h3 style="text-align: center; line-height: 40px;">Bạn phải đăng nhập để thực hiện đánh giá sản phẩm</h3>
                                     </div>
                                     <div style="left: 210px;">
-                                         <button class="btn btn-sm border-1" style="color: #F1F6F9;">
+                                        <button class="btn btn-sm border-1" style="color: #F1F6F9;">
                                             <a class="btn" style="color: #212A3E;" type="button" href="/Account/Login">Đăng nhập</a>
-                                         </button>
+                                        </button>
                                     </div>
                                 </div>
                             }
@@ -208,9 +204,9 @@
     </div>
 
     <!-- Best-seller -->
-    
-   @Html.Action("Partial_Related","Games")
- 
+
+    @Html.Action("Partial_Related", "Games")
+
     <!-- Newsletter -->
 
     <div class="newsletter">
@@ -225,4 +221,3 @@
 @section scripts{
     <script src="~/Content/assets/js/single_custom.js?version=1"></script>
 }
-

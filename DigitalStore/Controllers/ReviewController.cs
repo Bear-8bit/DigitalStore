@@ -47,14 +47,15 @@ namespace DigitalStore.Controllers
         [HttpPost]
         public ActionResult PostReview(Review req) 
         {
+            var code = new { Success = false, Code = -1, Url = "" };
             if (ModelState.IsValid)
             {
                 req.CreateDate = DateTime.Now;
                 _db.Reviews.Add(req);
                 _db.SaveChanges();
-                return Json(new { });
+                return RedirectToAction("GameGenre", "Games");
             }
-            return Json(new { Success = false });
+            return Json(code);
         }
 
         [AllowAnonymous]

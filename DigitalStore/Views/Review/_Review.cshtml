@@ -9,18 +9,11 @@
         OnSuccess = "OnSuccessRE",
         OnFailure = "OnFailureRE",
         OnBegin = "OnBeginRE"
-    }, new { @Id = "myForm" }
+    }, new { @Id = "review_form" }
     ))
     {
         <script>
-            function OnBeginRE() {
-                $('#review_submit').attr("disabled", "disabled");
-            }
-            function OnSuccessRE(res) {
-                if (res.Success) {
-                    $('#review_form')[0].reset();
-                }
-            }
+
         </script>
             @Html.AntiForgeryToken()
             <div>
