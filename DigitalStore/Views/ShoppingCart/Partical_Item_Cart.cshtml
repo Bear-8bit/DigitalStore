@@ -3,21 +3,22 @@
 
 
 <table class="table">
-    <tr class="text-center">
 
-        <th>STT</th>
-        <th>Ảnh sản phẩm</th>
-        <th colspan="2">Tên sản phẩm</th>
-        <th colspan="1">Danh mục sản phẩm</th>
-        <th style="width: 100px;" colspan="3">Giá </th>
-        <th style="width: 200px; display: none;">
-
-        </th>
-    </tr>
 
 
     @if (Model != null && Model.Any())
     {
+        <tr class="text-center">
+
+            <th>STT</th>
+            <th>Ảnh sản phẩm</th>
+            <th colspan="2">Tên sản phẩm</th>
+            <th colspan="1">Danh mục sản phẩm</th>
+            <th style="width: 100px;" colspan="3">Giá </th>
+            <th style="width: 200px; display: none;">
+
+            </th>
+        </tr>
         var i = 0;
         var tongtien = decimal.Zero;
         foreach (var item in Model)
@@ -48,9 +49,16 @@
     }
     else
     {
-        <tr>
-            <th colspan="7">Không có sản phẩm trong giỏ hàng</th>
-        </tr>
+        <div class="row row-item-new">
+            <div class="row">
+                <div class="col-md-6" style="left: 370px;">
+                    <img src="~/Content/assets/test/noshoppingcart.png" style="width: 380px; height: auto;" />
+                </div>
+                <div class="col-md-10" style="left: 300px; top: 20px; height: 100px;">
+                    <h3>Bạn chưa thêm sản phẩm nào vào giỏ hàng</h3>
+                </div>
+            </div>
+        </div>
     }
 
 </table>

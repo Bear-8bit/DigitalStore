@@ -6,6 +6,12 @@
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_responsive.css">
 @if (Model != null)
 {
+    var wishlist = Model.Wishlists.FirstOrDefault(x => x.UserName == User.Identity.Name);
+    var isWishlist = false;
+    if (wishlist != null)
+    {
+        isWishlist = true;
+    }
     <div class="container single_product_container">
         <div class="row">
             <div class="col-lg-7">
@@ -40,7 +46,14 @@
                     </ul>
                     <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                         <div class="red_buttons add_to_cart_buttons"><a href="#" class="btnAddToCart" data-id="@Model.Id">Thêm vào giỏ hàng</a></div>
-                        <div class="product_favorite d-flex flex-column align-items-center justify-content-center top-10"></div>
+                        @if (isWishlist == true)
+                        {
+                            <div class="product_favorite active d-flex flex-column align-items-center justify-content-center top-10"></div>
+                        }
+                        else
+                        {
+                            <div class="product_favorite d-flex flex-column align-items-center justify-content-center top-10"></div>
+                        }
                     </div>
                 </div>
             </div>
@@ -60,6 +73,7 @@
                                     <!-- Slide 1 -->
                                     @foreach (var item in Model.GameImage)
                                     {
+
                                         <div class="owl-item product_slider_item" style="height: 120px; overflow: hidden;">
                                             <div class="product-item">
                                                 <div class="product discount">

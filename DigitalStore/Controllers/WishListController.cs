@@ -17,7 +17,7 @@ namespace DigitalStore.Controllers
         // GET: WishList
         public ActionResult Index(int? page)
         {
-            var pageSize = 1;
+            var pageSize = 10;
             if(page == null)
             {
                 page = 1;
@@ -57,6 +57,7 @@ namespace DigitalStore.Controllers
         public ActionResult PostDeleteWishlist(int GameId)
         {
             var checkItem = db.Wishlist.FirstOrDefault(x => x.GameId == GameId && x.UserName == User.Identity.Name);
+           
             if (checkItem != null)
             {
                 db.Wishlist.Remove(checkItem);

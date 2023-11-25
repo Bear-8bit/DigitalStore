@@ -273,16 +273,51 @@ jQuery(document).ready(function($)
 	7. Init Favorite
 
 	*/
+	function DeleteWishlist(id) {
+		$.ajax({
+			url: '/wishlist/PostDeleteWishlist',
+			type: 'POST',
+			data: { GameId: id },
+			success: function (res) {
+				if (res.success == false) {
+					alert(res.Message);
+				}
+			}
+		});
+	}
 
+	function AddWishlist(id) {
+		$.ajax({
+			url: '/wishlist/postwishlist',
+			type: 'POST',
+			data: { GameId: id },
+			success: function (res) {
+				if (res.success == false) {
+					alert(res.Message);
+				}
+			}
+		});
+	}
 	function initFavorite()
 	{
 		if($('.product_favorite').length)
 		{
 			var fav = $('.product_favorite');
 
-			fav.on('click', function()
+			fav.on('click', function ()
 			{
-				fav.toggleClass('active');
+				var id = $(this).data('id');
+				if (active) {
+					fav.removeClass('active');
+					active = false;
+					DeleteWishlist(id);
+				}
+				else {
+					fav.addClass('active');
+					active = true;
+					
+					AddWishlist(id);
+				}
 			});
 		}
 	}

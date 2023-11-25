@@ -1510,10 +1510,6 @@ section
 	visibility: hidden;
 	opacity: 0;
 }
-.favorite_left
-{
-	left: 15px;
-}
 .favorite.active
 {
 	visibility: visible;

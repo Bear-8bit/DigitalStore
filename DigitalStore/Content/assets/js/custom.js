@@ -232,6 +232,31 @@ jQuery(document).ready(function($)
 	5. Init Favorite
 
 	*/
+	function DeleteWishlist(id) {
+		$.ajax({
+			url: '/WishList/PostDeleteWishlist',
+			type: 'POST',
+			data: { GameId: id },
+			success: function (res) {
+				if (res.success == false) {
+					alert(res.Message);
+				}
+			}
+		});
+	}
+
+	function AddWishlist(id) {
+		$.ajax({
+			url: '/WishList/PostWishlist',
+			type: 'POST',
+			data: { GameId: id },
+			success: function (res) {
+				if (res.success == false) {
+					alert(res.Message);
+				}
+			}
+		});
+	}
 
     function initFavorite()
     {
@@ -249,16 +274,19 @@ jQuery(document).ready(function($)
     			}
 
     			fav.on('click', function()
-    			{
+				{
+					var id = $(this).data('id');
     				if(active)
     				{
-    					fav.removeClass('active');
-    					active = false;
+						fav.removeClass('active');
+						active = false;
+						DeleteWishlist(id);
     				}
     				else
     				{
-    					fav.addClass('active');
-    					active = true;
+						fav.addClass('active');
+						active = true;
+						AddWishlist(id);
     				}
     			});
     		});
@@ -449,3 +477,4 @@ jQuery(document).ready(function($)
     	}
     }
 });
+

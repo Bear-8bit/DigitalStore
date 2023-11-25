@@ -476,6 +476,8 @@
     <Content Include="Content\assets\test\game2.jpg" />
     <Content Include="Content\assets\test\game3.jpg" />
     <Content Include="Content\assets\test\gif1.gif" />
+    <Content Include="Content\assets\test\nofavorite.png" />
+    <Content Include="Content\assets\test\noshoppingcart.png" />
     <Content Include="Content\assets\test\seki01.jpg" />
     <Content Include="Content\assets\test\seki02.jpg" />
     <Content Include="Content\assets\test\seki03.jpg" />

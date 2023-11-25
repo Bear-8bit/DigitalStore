@@ -25,7 +25,7 @@
 
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/Home/Index">Trang chủ</a></li>
                     <li class="active">
                         <a href="#"><i class='bx bx-right-arrow'></i>@ViewBag.GenreName</a>
                     </li>
@@ -105,18 +105,31 @@
                                 {
                                     foreach (var item in Model)
                                     {
+                                        var wishlist = item.Wishlists.FirstOrDefault(x => x.UserName == User.Identity.Name);
+                                        var isWishlist = false;
                                         var strImage = "";
                                         var img = item.GameImage.FirstOrDefault(x => x.IsDefault);
                                         if (img != null)
                                         {
                                             strImage = img.Image;
                                         }
+                                        if (wishlist != null)
+                                        {
+                                            isWishlist = true;
+                                        }
                                         <div class="product-item ">
                                             <div class="product discount product_filter">
                                                 <div class="product_image">
                                                     <img src="@strImage" alt="@item.Name">
                                                 </div>
-                                                <div data-id="@item.Id" class=" favorite favorite_left"></div>
+                                                @if (isWishlist == true)
+                                                {
+                                                    <div data-id="@item.Id" class="favorite favorite_right active"></div>
+                                                }
+                                                else
+                                                {
+                                                    <div data-id="@item.Id" class="favorite favorite_right"></div>
+                                                }
                                                 <div class="product_info">
                                                     <div class="product_info">
                                                         <h6 class="product_name"><a href="/chi-tiet/@item.Alias-@(item.Id)">@item.Name</a></h6>
