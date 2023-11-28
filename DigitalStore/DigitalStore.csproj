@@ -354,6 +354,34 @@
     <Compile Include="Migrations\202311280704477_ForgienKey.designer.cs">
       <DependentUpon>202311280704477_ForgienKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311280813239_OrderVoucher.cs" />
+    <Compile Include="Migrations\202311280813239_OrderVoucher.designer.cs">
+      <DependentUpon>202311280813239_OrderVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280834157_DiscountPriceOrder.cs" />
+    <Compile Include="Migrations\202311280834157_DiscountPriceOrder.designer.cs">
+      <DependentUpon>202311280834157_DiscountPriceOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280838479_OrderViewModelVoucher.cs" />
+    <Compile Include="Migrations\202311280838479_OrderViewModelVoucher.designer.cs">
+      <DependentUpon>202311280838479_OrderViewModelVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280842476_DisocuntPrice.cs" />
+    <Compile Include="Migrations\202311280842476_DisocuntPrice.designer.cs">
+      <DependentUpon>202311280842476_DisocuntPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280854394_ChangeVOucher.cs" />
+    <Compile Include="Migrations\202311280854394_ChangeVOucher.designer.cs">
+      <DependentUpon>202311280854394_ChangeVOucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280928414_ModifiedOrder.cs" />
+    <Compile Include="Migrations\202311280928414_ModifiedOrder.designer.cs">
+      <DependentUpon>202311280928414_ModifiedOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311281357475_ChangeUserPorfile.cs" />
+    <Compile Include="Migrations\202311281357475_ChangeUserPorfile.designer.cs">
+      <DependentUpon>202311281357475_ChangeUserPorfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3685,6 +3713,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Content\ckfinder\ckfinder\userfiles\" />
+    <Folder Include="Views\OrderDetail\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -3821,6 +3850,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311280704477_ForgienKey.resx">
       <DependentUpon>202311280704477_ForgienKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280813239_OrderVoucher.resx">
+      <DependentUpon>202311280813239_OrderVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280834157_DiscountPriceOrder.resx">
+      <DependentUpon>202311280834157_DiscountPriceOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280838479_OrderViewModelVoucher.resx">
+      <DependentUpon>202311280838479_OrderViewModelVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280842476_DisocuntPrice.resx">
+      <DependentUpon>202311280842476_DisocuntPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280854394_ChangeVOucher.resx">
+      <DependentUpon>202311280854394_ChangeVOucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280928414_ModifiedOrder.resx">
+      <DependentUpon>202311280928414_ModifiedOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311281357475_ChangeUserPorfile.resx">
+      <DependentUpon>202311281357475_ChangeUserPorfile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

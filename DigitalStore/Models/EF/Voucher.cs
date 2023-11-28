@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,6 +12,10 @@ namespace DigitalStore.Models.EF
     [Table("tb_Voucher")]
     public class Voucher
     {
+        public Voucher () 
+        {
+            this.Orders = new HashSet<Order> ();   
+        }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -22,6 +27,6 @@ namespace DigitalStore.Models.EF
         public DateTime? EndDate { get; set;}
 
         public virtual VoucherCategory VoucherCategory { get; set; }
-
+        public ICollection<Order> Orders { get; set; }
     }
 }

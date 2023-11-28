@@ -592,6 +592,8 @@ namespace DigitalStore.Controllers
         {
             var user = await UserManager.FindByEmailAsync(req.Email);
             user.FullName = req.FullName;
+            user.PhoneNumber = req.PhoneNumber;
+            user.Address = req.Address;
             var rs = await UserManager.UpdateAsync(user);
             if(rs.Succeeded)
             {

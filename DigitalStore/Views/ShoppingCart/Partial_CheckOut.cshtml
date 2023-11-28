@@ -47,6 +47,11 @@
             <input type="text" name="Address" class="form-control" autocomplete="off" style="color:#162938 ;" />
         </div>
         <div class="form-group">
+            <label for="exampleInputEmail1">Voucher</label>
+            @Html.DropDownListFor(x => x.DiscountPrice, ViewBag.Voucher as SelectList, "Chọn Voucher", new { @class = "form-control", @placeholder = "Danh sách Voucher" })
+            @Html.ValidationMessageFor(x => x.DiscountPrice, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
             <label>Email</label>
             <input type="text" name="Email" value="@user.Email" class="form-control" autocomplete="off" style="color:#162938 ;" />
         </div>

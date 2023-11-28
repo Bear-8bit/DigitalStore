@@ -3,7 +3,7 @@
     ViewBag.Title = "Profile";
 }
 <link href="~/Content/assets/styles/profile.css" rel="stylesheet" />
-<div class="container light-style flex-grow-1 container-p-y" style="height: 45rem;">
+<div class="container light-style flex-grow-1 container-p-y" style="height: 50rem;">
     <h4 class="font-weight-bold py-3 mb-4">
         Account settings
     </h4>
@@ -48,6 +48,14 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail">Tên tài khoản</label>
                                     <input type="text" class="form-control" aria-describedby="emailHelp" name="UserName" value="@Model.UserName" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Số điện thoại</label>
+                                    <input type="text" class="form-control" aria-describedby="emailHelp" name="PhoneNumber" value="@Model.PhoneNumber"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Địa chỉ</label>
+                                    <input type="text" class="form-control" aria-describedby="emailHelp" name="Address" value="@Model.Address" />
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail">Địa chỉ Email</label>
@@ -244,7 +252,7 @@
             </div>
         </div>
     </div>
-    <div class="text-right mt-3">
+    <div class="text-right" style="margin-top: 100px;">
 
     </div>
 </div>

@@ -81,8 +81,8 @@ namespace DigitalStore.Controllers
         [AllowAnonymous]
         public ActionResult CheckOutSuccess()
         {
-
-            return View();
+            var items = db.Orders.OrderByDescending(x => x.CreatedDate).Take(1).ToList();
+            return View(items);
         }
         [AllowAnonymous]
         public ActionResult Partical_Item_Cart()
@@ -122,9 +122,21 @@ namespace DigitalStore.Controllers
                         GameId = x.ProductId,
                         Price = x.Price,
                     }));
-                    order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
+                    order.DiscountPrice = req.DiscountPrice;
+                    if(order.DiscountPrice != 0)
+                    {
+                        order.TotalAmount = cart.Items.Sum(x => ((x.Price * x.Quantity)));
+                        order.TotalAmount -= order.DiscountPrice;
+                    }
+                    else
+                    {
+                        order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
+                    }
+                    
+                   
                     order.TypePayment = req.TypePayment;
                     order.CreatedDate = DateTime.Now;
+                    
                     if(User.Identity.IsAuthenticated)
                     {
                         order.CustomerId = User.Identity.GetUserId();
@@ -263,6 +275,7 @@ namespace DigitalStore.Controllers
         [AllowAnonymous]
         public ActionResult Partial_CheckOut()
         {
+            ViewBag.Voucher = new SelectList(db.Vouchers.ToList(), "DiscountPrice", "VoucherCode");
             var user = UserManager.FindByNameAsync(User.Identity.Name).Result;
             if(user != null) 
             {
