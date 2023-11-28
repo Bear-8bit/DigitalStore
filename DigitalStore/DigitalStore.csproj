@@ -194,6 +194,8 @@
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Areas\Admin\Controllers\RevenueController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VoucherCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VoucherController.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -344,6 +346,14 @@
     <Compile Include="Migrations\202311221950028_TableWishlist.designer.cs">
       <DependentUpon>202311221950028_TableWishlist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311271715444_VoucherDatabase.cs" />
+    <Compile Include="Migrations\202311271715444_VoucherDatabase.designer.cs">
+      <DependentUpon>202311271715444_VoucherDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280704477_ForgienKey.cs" />
+    <Compile Include="Migrations\202311280704477_ForgienKey.designer.cs">
+      <DependentUpon>202311280704477_ForgienKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -362,6 +372,8 @@
     <Compile Include="Models\EF\OrderDetail.cs" />
     <Compile Include="Models\EF\Publisher.cs" />
     <Compile Include="Models\EF\Review.cs" />
+    <Compile Include="Models\EF\Voucher.cs" />
+    <Compile Include="Models\EF\VoucherCategory.cs" />
     <Compile Include="Models\EF\Wishlist.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -3498,6 +3510,12 @@
     <Content Include="Areas\Admin\Views\MarketingPartner\Index.cshtml" />
     <Content Include="Areas\Admin\Views\MarketingPartner\Add.cshtml" />
     <Content Include="Areas\Admin\Views\MarketingPartner\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\VoucherCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\VoucherCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\VoucherCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Voucher\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Voucher\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Voucher\Edit.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -3797,6 +3815,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311221950028_TableWishlist.resx">
       <DependentUpon>202311221950028_TableWishlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311271715444_VoucherDatabase.resx">
+      <DependentUpon>202311271715444_VoucherDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280704477_ForgienKey.resx">
+      <DependentUpon>202311280704477_ForgienKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
