@@ -64,7 +64,6 @@
                                     <div class="card-header p-2">
                                         <ul class="nav nav-pills">
                                             <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Thông tin chung</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">SEO</a></li>
                                         </ul>
                                     </div><!-- /.card-header -->
                                     <div class="card-body">
@@ -95,7 +94,7 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail">Giá nhập</label>
                                                             <input type="text" name="demoOriginalPrice" value="@Html.DisplayFor(x => x.OriginalPrice)" id="demoOriginalPrice" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />
@@ -103,7 +102,7 @@
                                                             @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
                                                         </div>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail">Giá</label>
                                                             <input type="text" name="demoPrice" value="@Html.DisplayFor(x => x.Price)" id="demoPrice" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />
@@ -111,7 +110,7 @@
                                                             @Html.ValidationMessageFor(x => x.Price, null, new { @class = "text-danger" })
                                                         </div>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail">Giá khuyến mãi</label>
                                                             <input type="text" name="demoPriceSale" id="demoPriceSale" value="@Html.DisplayFor(x => x.PriceSale)" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />

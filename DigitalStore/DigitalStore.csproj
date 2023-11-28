@@ -3708,6 +3708,7 @@
     <Content Include="Views\WishList\Index.cshtml" />
     <Content Include="Views\Games\Partial_Related.cshtml" />
     <Content Include="Views\Review\PostReview.cshtml" />
+    <Content Include="Views\Games\Partial_Related_Publisher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

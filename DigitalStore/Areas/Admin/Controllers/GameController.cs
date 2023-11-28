@@ -70,6 +70,7 @@ namespace DigitalStore.Areas.Admin.Controllers
                         }
                     }
                 }
+                model.Alias = DigitalStore.Models.Common.Filter.FilterChar(model.Name);
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;
                 db.Games.Add(model);

@@ -112,7 +112,7 @@
                     <div class="tabs_container">
                         <ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
                             <li class="tab active" data-active-tab="tab_1"><span>Chi tiết</span></li>
-                            <li class="tab" data-active-tab="tab_2"><span>Yêu cầu cấu hình</span></li>
+                            
                             <li class="tab" data-active-tab="tab_3"><span>Đánh giá (@ViewBag.CountReview )</span></li>
                         </ul>
                     </div>
@@ -216,10 +216,10 @@
         </div>
 
     </div>
-
+    @Html.Action("Partial_Related_Publisher", "Games", new { gameId = Model.Id, publisherId = Model.PublisherId })
     <!-- Best-seller -->
 
-    @Html.Action("Partial_Related", "Games")
+    @Html.Action("Partial_Related", "Games", new { gamegenreId = Model.GameGenreId, gameId = Model.Id })
 
     <!-- Newsletter -->
 

@@ -81,8 +81,12 @@
                                                     @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "text-danger" })
                                                 </div>
                                                 <div class="form-group">
+                                                    <label for="exampleInputPassword1">Mô tả</label>
+                                                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @id = "" })
+                                                </div>
+                                                <div class="form-group">
                                                     <label for="exampleInputPassword1">Chi Tiết</label>
-                                                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @id = "txtDetail" })
+                                                    @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" })
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Thể loại Game</label>
@@ -95,15 +99,15 @@
                                                     @Html.ValidationMessageFor(x => x.PublisherId, null, new { @class = "text-danger" })
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail">Giá nhập</label>
-                                                            <input type="text" name="demoOriginalPrice" value="@Html.DisplayFor(x => x.OriginalPrice)" id="demoOriginalPrice" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />
+                                                            <input type="text" name="demoOriginalPrice" value="0" id="demoOriginalPrice" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />
                                                             @Html.HiddenFor(x => x.OriginalPrice, new { @class = "", @placeholder = "Giá nhập" })
                                                             @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
                                                         </div>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail">Giá</label>
                                                             <input type="text" name="demoPrice" value="0" id="demoPrice" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />
@@ -111,10 +115,10 @@
                                                             @Html.ValidationMessageFor(x => x.Price, null, new { @class = "text-danger" })
                                                         </div>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail">Giá khuyến mãi</label>
-                                                           
+
                                                             <input type="text" name="demoPriceSale" id="demoPriceSale" value="0" class="form-control auto" data-a-sign="" data-a-dec="," data-a-sep="." />
                                                             @Html.HiddenFor(x => x.PriceSale, new { @class = "", @placeholder = "Giá khuyến mãi" })
                                                             @Html.ValidationMessageFor(x => x.PriceSale, null, new { @class = "text-danger" })

@@ -1,4 +1,5 @@
 ﻿using DigitalStore.Models;
+using DigitalStore.Models.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,10 +68,16 @@ namespace DigitalStore.Controllers
             return PartialView(items);
         }
 
-        public ActionResult Partial_Related()
+        public ActionResult Partial_Related(int gamegenreId, int gameId)
         {
-            var items = db.Games.ToList();
-            return PartialView(items);
+            var item = db.Games.Where(x => x.GameGenreId == gamegenreId && x.Id != gameId).OrderByDescending(x => x.Id).ToList();
+            return PartialView(item);
+        }
+
+        public ActionResult Partial_Related_Publisher(int gameId, int publisherId)
+        {
+            var item = db.Games.Where(x => x.Id != gameId && x.PublisherId == publisherId).OrderByDescending(x => x.Id).ToList();
+            return PartialView(item);
         }
     }
 }
